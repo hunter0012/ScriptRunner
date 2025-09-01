@@ -21,6 +21,7 @@ ApplicationWindow {
     property bool expanded: false
     property bool followMouseY: false
     property bool isDragging: false
+    property string screenEdge: "right" // right, left, top, bottom
 
     property real globalMouseX: 0
     property real globalMouseY: 0
@@ -37,9 +38,9 @@ ApplicationWindow {
             root.globalMouseY = cursorPosition.y
 
             if (isDragging) {
-                updateDragPosition(cursorPosition.y)
+                updateDragPosition(cursorPosition.x, cursorPosition.y)
             } else if (followMouseY && !expanded) {
-                followMouse(cursorPosition.y)
+                followMouse(cursorPosition.x, cursorPosition.y)
             } else {
                 checkMouseDistance()
             }
@@ -49,29 +50,68 @@ ApplicationWindow {
     Component.onCompleted: initializePosition()
 
     function initializePosition() {
-        root.x = Screen.width - docked_width
-        root.y = (Screen.height - height) / 2
+        positionToEdge(screenEdge)
         savedY = root.y
     }
 
-    function updateDragPosition(cursorY) {
+    function positionToEdge(edge) {
+        screenEdge = edge
+        switch(edge) {
+            case "right":
+                root.x = Screen.width - (expanded ? undocked_width : docked_width)
+                root.y = (Screen.height - height) / 2
+                break;
+            case "left":
+                root.x = 0
+                root.y = (Screen.height - height) / 2
+                break;
+            case "top":
+                root.x = (Screen.width - width) / 2
+                root.y = 0
+                break;
+            case "bottom":
+                root.x = (Screen.width - width) / 2
+                root.y = Screen.height - height
+                break;
+        }
+    }
+
+    function updateDragPosition(cursorX, cursorY) {
+        var dx = cursorX - dragStartX
         var dy = cursorY - dragStartY
+        var newX = windowStartX + dx
         var newY = windowStartY + dy
+
+        root.x = Math.max(0, Math.min(newX, Screen.width - root.width))
         root.y = Math.max(0, Math.min(newY, Screen.height - root.height))
     }
 
-    function followMouse(cursorY) {
-        var newY = cursorY - root.height / 2
-        root.y = Math.max(0, Math.min(newY, Screen.height - root.height))
+    function followMouse(cursorX, cursorY) {
+        if (!expanded && followMouseY) {
+            if (screenEdge === "top" || screenEdge === "bottom") {
+                // Follow mouse X when on top or bottom edges
+                var newX = cursorX - root.width / 2
+                root.x = Math.max(0, Math.min(newX, Screen.width - root.width))
+            } else {
+                // Follow mouse Y when on left or right edges
+                var newY = cursorY - root.height / 2
+                root.y = Math.max(0, Math.min(newY, Screen.height - root.height))
+            }
+        }
     }
 
     function ensureExpandedOnScreen() {
         if (!expanded) return
 
+        var newX = root.x
         var newY = root.y
+
+        if (newX + root.width > Screen.width) newX = Screen.width - root.width
+        if (newX < 0) newX = 0
         if (newY + root.height > Screen.height) newY = Screen.height - root.height
         if (newY < 0) newY = 0
 
+        if (newX !== root.x) root.x = newX
         if (newY !== root.y) root.y = newY
     }
 
@@ -95,12 +135,29 @@ ApplicationWindow {
 
     function collapse() {
         expanded = false
-        root.x = Screen.width - docked_width
+        positionToEdge(screenEdge)
     }
 
     function toggleExpanded() {
         expanded = !expanded
         if (expanded) ensureExpandedOnScreen()
+    }
+
+    function detectScreenEdge() {
+        var centerX = root.x + root.width / 2
+        var centerY = root.y + root.height / 2
+
+        var distToRight = Screen.width - centerX
+        var distToLeft = centerX
+        var distToTop = centerY
+        var distToBottom = Screen.height - centerY
+
+        var minDist = Math.min(distToRight, distToLeft, distToTop, distToBottom)
+
+        if (minDist === distToRight) return "right"
+        if (minDist === distToLeft) return "left"
+        if (minDist === distToTop) return "top"
+        return "bottom"
     }
 
     // Main container with simple rounded corners
@@ -125,11 +182,14 @@ ApplicationWindow {
             }
 
             onPositionChanged: function(mouse) {
-                if (pressed && isDragging) updateDragPosition(root.globalMouseY)
+                if (pressed && isDragging) updateDragPosition(root.globalMouseX, root.globalMouseY)
             }
 
             onReleased: function() {
                 isDragging = false
+                // Auto-dock to nearest screen edge when released
+                screenEdge = detectScreenEdge()
+                positionToEdge(screenEdge)
             }
 
             onDoubleClicked: function() {
@@ -168,6 +228,153 @@ ApplicationWindow {
                 color: "#ECF0F1"
                 Layout.alignment: Qt.AlignHCenter
                 Layout.bottomMargin: 8
+            }
+
+            // Screen position buttons
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 26
+                spacing: 4
+
+                // Left position button
+                Rectangle {
+                    id: leftButton
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 26
+                    radius: 3
+                    color: leftMouseArea.pressed ? "#34495E" :
+                           leftMouseArea.containsMouse ? "#2C3E50" : "#34495E"
+                    border.width: 2
+                    border.color: screenEdge === "left" ? "#3498DB" : "#2C3E50"
+
+                    Text {
+                        text: "←"
+                        color: "#ECF0F1"
+                        font.pixelSize: 11
+                        font.bold: true
+                        anchors.centerIn: parent
+                    }
+
+                    MouseArea {
+                        id: leftMouseArea
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onClicked: positionToEdge("left")
+                    }
+                }
+
+                // Top position button
+                Rectangle {
+                    id: topButton
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 26
+                    radius: 3
+                    color: topMouseArea.pressed ? "#34495E" :
+                           topMouseArea.containsMouse ? "#2C3E50" : "#34495E"
+                    border.width: 2
+                    border.color: screenEdge === "top" ? "#3498DB" : "#2C3E50"
+
+                    Text {
+                        text: "↑"
+                        color: "#ECF0F1"
+                        font.pixelSize: 11
+                        font.bold: true
+                        anchors.centerIn: parent
+                    }
+
+                    MouseArea {
+                        id: topMouseArea
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onClicked: positionToEdge("top")
+                    }
+                }
+
+                // Bottom position button
+                Rectangle {
+                    id: bottomButton
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 26
+                    radius: 3
+                    color: bottomMouseArea.pressed ? "#34495E" :
+                           bottomMouseArea.containsMouse ? "#2C3E50" : "#34495E"
+                    border.width: 2
+                    border.color: screenEdge === "bottom" ? "#3498DB" : "#2C3E50"
+
+                    Text {
+                        text: "↓"
+                        color: "#ECF0F1"
+                        font.pixelSize: 11
+                        font.bold: true
+                        anchors.centerIn: parent
+                    }
+
+                    MouseArea {
+                        id: bottomMouseArea
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onClicked: positionToEdge("bottom")
+                    }
+                }
+
+                // Right position button
+                Rectangle {
+                    id: rightButton
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 26
+                    radius: 3
+                    color: rightMouseArea.pressed ? "#34495E" :
+                           rightMouseArea.containsMouse ? "#2C3E50" : "#34495E"
+                    border.width: 2
+                    border.color: screenEdge === "right" ? "#3498DB" : "#2C3E50"
+
+                    Text {
+                        text: "→"
+                        color: "#ECF0F1"
+                        font.pixelSize: 11
+                        font.bold: true
+                        anchors.centerIn: parent
+                    }
+
+                    MouseArea {
+                        id: rightMouseArea
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onClicked: positionToEdge("right")
+                    }
+                }
+            }
+
+            // Follow mode button with dynamic text
+            Rectangle {
+                id: followButton
+                Layout.fillWidth: true
+                Layout.preferredHeight: 26
+                radius: 3
+                color: followMouseArea.pressed ? (followMouseY ? "#27AE60" : "#7F8C8D") :
+                       followMouseArea.containsMouse ? (followMouseY ? "#229954" : "#95A5A6") :
+                       (followMouseY ? "#27AE60" : "#7F8C8D")
+                border.width: 1
+                border.color: followMouseY ? "#229954" : "#95A5A6"
+
+                Text {
+                    text: {
+                        if (!followMouseY) return "Enable Follow"
+                        if (screenEdge === "top" || screenEdge === "bottom") return "Following Mouse X"
+                        return "Following Mouse Y"
+                    }
+                    color: "#ECF0F1"
+                    font.pixelSize: 11
+                    font.bold: true
+                    anchors.centerIn: parent
+                }
+
+                MouseArea {
+                    id: followMouseArea
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: followMouseY = !followMouseY
+                }
             }
 
             // Action buttons with sharper design
@@ -294,119 +501,9 @@ ApplicationWindow {
                 }
             }
 
-            Rectangle {
-                id: browserButton
-                Layout.fillWidth: true
-                Layout.preferredHeight: 28
-                radius: 3
-                color: browserMouseArea.pressed ? "#34495E" :
-                       browserMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                border.width: 1
-                border.color: "#2C3E50"
-
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.margins: 5
-                    spacing: 8
-
-                    Text {
-                        text: "🌐"
-                        font.pixelSize: 12
-                        color: "#ECF0F1"
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-
-                    Text {
-                        text: "Browser"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        elide: Text.ElideRight
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-                }
-
-                MouseArea {
-                    id: browserMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onClicked: Qt.openUrlExternally("https://www.google.com")
-                }
-            }
-
-            Rectangle {
-                id: explorerButton
-                Layout.fillWidth: true
-                Layout.preferredHeight: 28
-                radius: 3
-                color: explorerMouseArea.pressed ? "#34495E" :
-                       explorerMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                border.width: 1
-                border.color: "#2C3E50"
-
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.margins: 5
-                    spacing: 8
-
-                    Text {
-                        text: "📁"
-                        font.pixelSize: 12
-                        color: "#ECF0F1"
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-
-                    Text {
-                        text: "File Explorer"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        elide: Text.ElideRight
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-                }
-
-                MouseArea {
-                    id: explorerMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onClicked: Qt.openUrlExternally("explorer.exe")
-                }
-            }
-
             // Spacer to push bottom buttons down
             Item {
                 Layout.fillHeight: true
-            }
-
-            // Bottom action buttons
-            Rectangle {
-                id: followButton
-                Layout.fillWidth: true
-                Layout.preferredHeight: 26
-                radius: 3
-                color: followMouseArea.pressed ? (followMouseY ? "#27AE60" : "#7F8C8D") :
-                       followMouseArea.containsMouse ? (followMouseY ? "#229954" : "#95A5A6") :
-                       (followMouseY ? "#27AE60" : "#7F8C8D")
-                border.width: 1
-                border.color: followMouseY ? "#229954" : "#95A5A6"
-
-                Text {
-                    text: followMouseY ? "Disable Follow" : "Enable Follow"
-                    color: "#ECF0F1"
-                    font.pixelSize: 11
-                    font.bold: true
-                    anchors.centerIn: parent
-                }
-
-                MouseArea {
-                    id: followMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onClicked: followMouseY = !followMouseY
-                }
             }
 
             Rectangle {
@@ -441,12 +538,12 @@ ApplicationWindow {
         if (expanded) {
             savedY = root.y
             root.width = undocked_width
-            root.x = Screen.width - undocked_width
+            positionToEdge(screenEdge)
             ensureExpandedOnScreen()
         } else {
             root.y = savedY
             root.width = docked_width
-            root.x = Screen.width - docked_width
+            positionToEdge(screenEdge)
         }
     }
 
