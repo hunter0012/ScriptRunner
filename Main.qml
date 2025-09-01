@@ -19,13 +19,14 @@ ApplicationWindow {
     property int closeThreshold: 100
 
     property bool expanded: false
-    property bool followMouseY: false
+    property bool followMouse: false
     property bool isDragging: false
     property string screenEdge: "right" // right, left, top, bottom
 
     property real globalMouseX: 0
     property real globalMouseY: 0
     property real savedY: 0
+    property real savedX: 0
     property real dragStartX: 0
     property real dragStartY: 0
     property real windowStartX: 0
@@ -39,8 +40,8 @@ ApplicationWindow {
 
             if (isDragging) {
                 updateDragPosition(cursorPosition.x, cursorPosition.y)
-            } else if (followMouseY && !expanded) {
-                followMouse(cursorPosition.x, cursorPosition.y)
+            } else if (followMouse && !expanded) {
+                followMousePosition(cursorPosition.x, cursorPosition.y)
             } else {
                 checkMouseDistance()
             }
@@ -52,6 +53,7 @@ ApplicationWindow {
     function initializePosition() {
         positionToEdge(screenEdge)
         savedY = root.y
+        savedX = root.x
     }
 
     function positionToEdge(edge) {
@@ -59,18 +61,18 @@ ApplicationWindow {
         switch(edge) {
             case "right":
                 root.x = Screen.width - (expanded ? undocked_width : docked_width)
-                root.y = (Screen.height - height) / 2
+                root.y = savedY
                 break;
             case "left":
                 root.x = 0
-                root.y = (Screen.height - height) / 2
+                root.y = savedY
                 break;
             case "top":
-                root.x = (Screen.width - width) / 2
+                root.x = savedX
                 root.y = 0
                 break;
             case "bottom":
-                root.x = (Screen.width - width) / 2
+                root.x = savedX
                 root.y = Screen.height - height
                 break;
         }
@@ -86,16 +88,24 @@ ApplicationWindow {
         root.y = Math.max(0, Math.min(newY, Screen.height - root.height))
     }
 
-    function followMouse(cursorX, cursorY) {
-        if (!expanded && followMouseY) {
+    function followMousePosition(cursorX, cursorY) {
+        if (!expanded && followMouse) {
             if (screenEdge === "top" || screenEdge === "bottom") {
                 // Follow mouse X when on top or bottom edges
                 var newX = cursorX - root.width / 2
-                root.x = Math.max(0, Math.min(newX, Screen.width - root.width))
+                newX = Math.max(0, Math.min(newX, Screen.width - root.width))
+                if (newX !== root.x) {
+                    root.x = newX
+                    savedX = newX // Remember the X position
+                }
             } else {
                 // Follow mouse Y when on left or right edges
                 var newY = cursorY - root.height / 2
-                root.y = Math.max(0, Math.min(newY, Screen.height - root.height))
+                newY = Math.max(0, Math.min(newY, Screen.height - root.height))
+                if (newY !== root.y) {
+                    root.y = newY
+                    savedY = newY // Remember the Y position
+                }
             }
         }
     }
@@ -179,6 +189,8 @@ ApplicationWindow {
                 dragStartY = root.globalMouseY
                 windowStartX = root.x
                 windowStartY = root.y
+                savedX = root.x // Remember current position
+                savedY = root.y // Remember current position
             }
 
             onPositionChanged: function(mouse) {
@@ -187,6 +199,9 @@ ApplicationWindow {
 
             onReleased: function() {
                 isDragging = false
+                // Remember the current position before docking
+                savedX = root.x
+                savedY = root.y
                 // Auto-dock to nearest screen edge when released
                 screenEdge = detectScreenEdge()
                 positionToEdge(screenEdge)
@@ -351,15 +366,15 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 26
                 radius: 3
-                color: followMouseArea.pressed ? (followMouseY ? "#27AE60" : "#7F8C8D") :
-                       followMouseArea.containsMouse ? (followMouseY ? "#229954" : "#95A5A6") :
-                       (followMouseY ? "#27AE60" : "#7F8C8D")
+                color: followMouseArea.pressed ? (followMouse ? "#27AE60" : "#7F8C8D") :
+                       followMouseArea.containsMouse ? (followMouse ? "#229954" : "#95A5A6") :
+                       (followMouse ? "#27AE60" : "#7F8C8D")
                 border.width: 1
-                border.color: followMouseY ? "#229954" : "#95A5A6"
+                border.color: followMouse ? "#229954" : "#95A5A6"
 
                 Text {
                     text: {
-                        if (!followMouseY) return "Enable Follow"
+                        if (!followMouse) return "Enable Follow"
                         if (screenEdge === "top" || screenEdge === "bottom") return "Following Mouse X"
                         return "Following Mouse Y"
                     }
@@ -373,7 +388,7 @@ ApplicationWindow {
                     id: followMouseArea
                     anchors.fill: parent
                     hoverEnabled: true
-                    onClicked: followMouseY = !followMouseY
+                    onClicked: followMouse = !followMouse
                 }
             }
 
@@ -537,11 +552,13 @@ ApplicationWindow {
     onExpandedChanged: {
         if (expanded) {
             savedY = root.y
+            savedX = root.x
             root.width = undocked_width
             positionToEdge(screenEdge)
             ensureExpandedOnScreen()
         } else {
             root.y = savedY
+            root.x = savedX
             root.width = docked_width
             positionToEdge(screenEdge)
         }

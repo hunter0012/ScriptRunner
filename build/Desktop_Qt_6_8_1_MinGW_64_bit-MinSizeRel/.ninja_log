@@ -91,3 +91,16 @@
 1139	1481	7784491738802037	CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp.obj	8975e91da00a5623
 1133	5572	7784491738771896	CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Main_qml.cpp.obj	1c581de1656919ee
 5572	5873	7784491783166121	appScriptRunner.exe	8bf9fd6c26a05a4f
+83	214	7784495744431579	ScriptRunner/Main.qml	996727a74062a5c9
+83	214	7784495744431579	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/ScriptRunner/Main.qml	996727a74062a5c9
+96	1023	7784495752425434	.qt/qml_imports/appScriptRunner_build.cmake	bdc710097de21861
+96	1023	7784495752425434	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/qml_imports/appScriptRunner_build.cmake	bdc710097de21861
+1037	1160	7784495753868449	.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp	6ae10a392c3986a1
+1037	1160	7784495753868449	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp	6ae10a392c3986a1
+1023	1381	7784495756004557	.rcc/qmlcache/appScriptRunner_Main_qml.cpp	f0b0e96182ef504f
+1023	1381	7784495756004557	.rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats	f0b0e96182ef504f
+1023	1381	7784495756004557	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Main_qml.cpp	f0b0e96182ef504f
+1023	1381	7784495756004557	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats	f0b0e96182ef504f
+1392	1964	7784495756409675	CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp.obj	8975e91da00a5623
+1381	6722	7784495756305597	CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Main_qml.cpp.obj	1c581de1656919ee
+6722	7089	7784495809702948	appScriptRunner.exe	8bf9fd6c26a05a4f
