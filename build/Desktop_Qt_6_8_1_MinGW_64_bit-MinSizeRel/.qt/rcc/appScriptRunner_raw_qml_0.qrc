@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/ScriptRunner/">
+    <file alias="Main.qml">C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml</file>
+  </qresource>
+</RCC>
+

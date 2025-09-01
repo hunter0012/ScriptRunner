@@ -1,0 +1,5 @@
+module ScriptRunner
+typeinfo appScriptRunner.qmltypes
+prefer :/qt/qml/ScriptRunner/
+Main 1.0 Main.qml
+

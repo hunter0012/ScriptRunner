@@ -1,0 +1,12 @@
+--bare
+-I
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel
+-I
+C:/Qt/6.8.1/mingw_64/qml
+--resource
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qmake_ScriptRunner.qrc
+--resource
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/appScriptRunner_raw_qml_0.qrc
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml
+--json
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/appScriptRunner_qmllint.json

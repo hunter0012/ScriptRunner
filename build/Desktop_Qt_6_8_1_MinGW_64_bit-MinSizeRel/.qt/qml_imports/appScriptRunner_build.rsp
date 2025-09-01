@@ -1,0 +1,14 @@
+-rootPath
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner
+-cmake-output
+-output-file
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/qml_imports/appScriptRunner_build.cmake
+-importPath
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/ScriptRunner
+-importPath
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel
+-importPath
+C:/Qt/6.8.1/mingw_64/qml
+-qrcFiles
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qmake_ScriptRunner.qrc
+C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/appScriptRunner_raw_qml_0.qrc
