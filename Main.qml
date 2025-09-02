@@ -12,9 +12,11 @@ ApplicationWindow {
     color: "transparent"
     visible: true
 
-    property int docked_width: 15
-    property int undocked_width: 220
     property int docked_height: 30
+    property int docked_width: 15
+
+
+    property int undocked_width: 220
     property int undocked_height: 300
     property int closeThreshold: 100
 
@@ -31,6 +33,10 @@ ApplicationWindow {
     property real dragStartY: 0
     property real windowStartX: 0
     property real windowStartY: 0
+
+    // Edge snapping thresholds
+    property int edgeSnapThreshold: 50 // pixels from edge to snap
+    property bool snappingToEdge: false
 
     MousePositionProvider {
         id: mouseProvider
@@ -52,28 +58,31 @@ ApplicationWindow {
 
     function initializePosition() {
         positionToEdge(screenEdge)
-        savedY = root.y
-        savedX = root.x
     }
 
     function positionToEdge(edge) {
         screenEdge = edge
+        console.log("new edge : " + edge)
         switch(edge) {
             case "right":
                 root.x = Screen.width - (expanded ? undocked_width : docked_width)
-                root.y = savedY
+                root.docked_height = 30
+                root.docked_width = 15
                 break;
             case "left":
                 root.x = 0
-                root.y = savedY
+                root.docked_height = 30
+                root.docked_width = 15
                 break;
             case "top":
-                root.x = savedX
                 root.y = 0
+                root.docked_height = 15
+                root.docked_width = 30
                 break;
             case "bottom":
-                root.x = savedX
                 root.y = Screen.height - height
+                root.docked_height = 15
+                root.docked_width = 30
                 break;
         }
     }
@@ -84,8 +93,55 @@ ApplicationWindow {
         var newX = windowStartX + dx
         var newY = windowStartY + dy
 
-        root.x = Math.max(0, Math.min(newX, Screen.width - root.width))
-        root.y = Math.max(0, Math.min(newY, Screen.height - root.height))
+        // Check for edge snapping during drag
+        var snappedEdge = checkEdgeSnapping(newX, newY)
+
+        if (snappedEdge) {
+            // Snap to edge
+            switch(snappedEdge) {
+                case "right":
+                    newX = Screen.width - width
+                    break;
+                case "left":
+                    newX = 0
+                    break;
+                case "top":
+                    newY = 0
+                    break;
+                case "bottom":
+                    newY = Screen.height - height
+                    break;
+            }
+            snappingToEdge = true
+        } else {
+            snappingToEdge = false
+            // Regular boundary checking
+            newX = Math.max(0, Math.min(newX, Screen.width - root.width))
+            newY = Math.max(0, Math.min(newY, Screen.height - root.height))
+        }
+
+        root.x = newX
+        root.y = newY
+    }
+
+    function checkEdgeSnapping(x, y) {
+        // Check right edge
+        if (Screen.width - (x + width) < edgeSnapThreshold && Screen.width - (x + width) >= 0) {
+            return "right"
+        }
+        // Check left edge
+        if (x < edgeSnapThreshold && x >= 0) {
+            return "left"
+        }
+        // Check top edge
+        if (y < edgeSnapThreshold && y >= 0) {
+            return "top"
+        }
+        // Check bottom edge
+        if (Screen.height - (y + height) < edgeSnapThreshold && Screen.height - (y + height) >= 0) {
+            return "bottom"
+        }
+        return ""
     }
 
     function followMousePosition(cursorX, cursorY) {
@@ -96,7 +152,6 @@ ApplicationWindow {
                 newX = Math.max(0, Math.min(newX, Screen.width - root.width))
                 if (newX !== root.x) {
                     root.x = newX
-                    savedX = newX // Remember the X position
                 }
             } else {
                 // Follow mouse Y when on left or right edges
@@ -104,7 +159,6 @@ ApplicationWindow {
                 newY = Math.max(0, Math.min(newY, Screen.height - root.height))
                 if (newY !== root.y) {
                     root.y = newY
-                    savedY = newY // Remember the Y position
                 }
             }
         }
@@ -145,7 +199,7 @@ ApplicationWindow {
 
     function collapse() {
         expanded = false
-        positionToEdge(screenEdge)
+        // positionToEdge(screenEdge)
     }
 
     function toggleExpanded() {
@@ -154,6 +208,14 @@ ApplicationWindow {
     }
 
     function detectScreenEdge() {
+        // If we're already snapping to an edge, use that edge
+        if (snappingToEdge) {
+            if (root.x <= 0) return "left"
+            if (root.x >= Screen.width - width) return "right"
+            if (root.y <= 0) return "top"
+            if (root.y >= Screen.height - height) return "bottom"
+        }
+
         var centerX = root.x + root.width / 2
         var centerY = root.y + root.height / 2
 
@@ -189,8 +251,7 @@ ApplicationWindow {
                 dragStartY = root.globalMouseY
                 windowStartX = root.x
                 windowStartY = root.y
-                savedX = root.x // Remember current position
-                savedY = root.y // Remember current position
+                snappingToEdge = false
             }
 
             onPositionChanged: function(mouse) {
@@ -199,10 +260,6 @@ ApplicationWindow {
 
             onReleased: function() {
                 isDragging = false
-                // Remember the current position before docking
-                savedX = root.x
-                savedY = root.y
-                // Auto-dock to nearest screen edge when released
                 screenEdge = detectScreenEdge()
                 positionToEdge(screenEdge)
             }
@@ -553,14 +610,10 @@ ApplicationWindow {
         if (expanded) {
             savedY = root.y
             savedX = root.x
-            root.width = undocked_width
-            positionToEdge(screenEdge)
             ensureExpandedOnScreen()
         } else {
             root.y = savedY
             root.x = savedX
-            root.width = docked_width
-            positionToEdge(screenEdge)
         }
     }
 

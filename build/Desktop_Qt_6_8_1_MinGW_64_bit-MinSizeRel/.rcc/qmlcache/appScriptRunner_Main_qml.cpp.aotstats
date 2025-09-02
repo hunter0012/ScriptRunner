@@ -30,17 +30,9 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 165,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "durationMicroseconds": 377,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "initializePosition",
-                        "line": 53
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 5,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Functions without type annotations won't be compiled",
-                        "functionName": "positionToEdge",
                         "line": 59
                     },
                     {
@@ -48,8 +40,24 @@
                         "column": 5,
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "positionToEdge",
+                        "line": 63
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "updateDragPosition",
-                        "line": 81
+                        "line": 90
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "checkEdgeSnapping",
+                        "line": 127
                     },
                     {
                         "codegenSuccessfull": false,
@@ -57,15 +65,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "followMousePosition",
-                        "line": 91
+                        "line": 147
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 103,
+                        "durationMicroseconds": 79,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "ensureExpandedOnScreen",
-                        "line": 113
+                        "line": 167
                     },
                     {
                         "codegenSuccessfull": false,
@@ -73,39 +81,39 @@
                         "durationMicroseconds": 130,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "checkMouseDistance",
-                        "line": 128
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 5,
-                        "durationMicroseconds": 315,
-                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
-                        "functionName": "collapse",
-                        "line": 146
+                        "line": 182
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 215,
+                        "durationMicroseconds": 69,
+                        "errorMessage": "",
+                        "functionName": "collapse",
+                        "line": 200
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 5,
+                        "durationMicroseconds": 208,
                         "errorMessage": "",
                         "functionName": "toggleExpanded",
-                        "line": 151
+                        "line": 205
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 71,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "detectScreenEdge",
-                        "line": 156
+                        "line": 210
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "onExpandedChanged",
-                        "line": 552
+                        "line": 609
                     },
                     {
                         "codegenSuccessfull": false,
@@ -113,7 +121,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on onScreenChanged.",
                         "functionName": "onScreenChanged",
-                        "line": 567
+                        "line": 620
                     },
                     {
                         "codegenSuccessfull": false,
@@ -121,7 +129,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "onCursorPositionChanged",
-                        "line": 37
+                        "line": 43
                     },
                     {
                         "codegenSuccessfull": false,
@@ -129,39 +137,39 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on onCursorPositionChanged.",
                         "functionName": "onCursorPositionChanged",
-                        "line": 37
+                        "line": 43
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "onCompleted",
-                        "line": 51
+                        "line": 57
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "color",
-                        "line": 177
+                        "line": 239
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "radius",
-                        "line": 178
+                        "line": 240
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 171,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 176
+                        "line": 238
                     },
                     {
                         "codegenSuccessfull": false,
@@ -169,175 +177,215 @@
                         "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "enabled",
-                        "line": 184
+                        "line": 246
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot find name isDragging",
                         "functionName": "onPressed",
-                        "line": 186
+                        "line": 248
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "onPressed",
-                        "line": 186
+                        "line": 248
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name isDragging",
                         "functionName": "onPositionChanged",
-                        "line": 196
+                        "line": 257
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "onPositionChanged",
-                        "line": 196
+                        "line": 257
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot find name isDragging",
                         "functionName": "onReleased",
-                        "line": 200
+                        "line": 261
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 57,
                         "errorMessage": "",
                         "functionName": "onReleased",
-                        "line": 200
+                        "line": 261
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 30,
-                        "durationMicroseconds": 335,
+                        "durationMicroseconds": 294,
                         "errorMessage": "method toggleExpanded cannot be resolved.",
                         "functionName": "onDoubleClicked",
-                        "line": 210
+                        "line": 267
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 30,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "onDoubleClicked",
-                        "line": 210
+                        "line": 267
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 182
+                        "line": 244
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "enabled",
-                        "line": 219
+                        "line": 276
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 1148,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "onClicked",
-                        "line": 220
+                        "line": 277
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 108,
+                        "durationMicroseconds": 59,
                         "errorMessage": "",
                         "functionName": "onClicked",
-                        "line": 220
+                        "line": 277
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 184,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 217
+                        "line": 274
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "visible",
-                        "line": 229
+                        "line": 286
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 195,
+                        "durationMicroseconds": 110,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 228
+                        "line": 285
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 72,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "visible",
-                        "line": 237
+                        "line": 294
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 132,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 234
+                        "line": 291
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 259,
+                        "durationMicroseconds": 427,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 244
+                        "line": 301
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 778,
+                        "durationMicroseconds": 930,
                         "errorMessage": "",
                         "functionName": "color",
-                        "line": 260
+                        "line": 317
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 35,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 71,
                         "errorMessage": "Cannot access value for name screenEdge",
                         "functionName": "color",
-                        "line": 263
+                        "line": 320
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 270
+                        "line": 327
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 36,
+                        "durationMicroseconds": 1146,
+                        "errorMessage": "method positionToEdge cannot be resolved.",
+                        "functionName": "onClicked",
+                        "line": 334
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 39,
+                        "durationMicroseconds": 141,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 332
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 28,
+                        "durationMicroseconds": 1091,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 344
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 35,
+                        "durationMicroseconds": 56,
+                        "errorMessage": "Cannot access value for name screenEdge",
+                        "functionName": "color",
+                        "line": 347
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 80,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 354
                     },
                     {
                         "codegenSuccessfull": false,
@@ -345,311 +393,159 @@
                         "durationMicroseconds": 305,
                         "errorMessage": "method positionToEdge cannot be resolved.",
                         "functionName": "onClicked",
-                        "line": 277
+                        "line": 361
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 132,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 275
+                        "line": 359
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 656,
+                        "durationMicroseconds": 678,
                         "errorMessage": "",
                         "functionName": "color",
-                        "line": 287
+                        "line": 371
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 35,
-                        "durationMicroseconds": 152,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot access value for name screenEdge",
                         "functionName": "color",
-                        "line": 290
+                        "line": 374
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 125,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 297
+                        "line": 381
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 443,
+                        "durationMicroseconds": 278,
                         "errorMessage": "method positionToEdge cannot be resolved.",
                         "functionName": "onClicked",
-                        "line": 304
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 39,
-                        "durationMicroseconds": 134,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 302
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 756,
-                        "errorMessage": "",
-                        "functionName": "color",
-                        "line": 314
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 35,
-                        "durationMicroseconds": 48,
-                        "errorMessage": "Cannot access value for name screenEdge",
-                        "functionName": "color",
-                        "line": 317
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 74,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 324
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 277,
-                        "errorMessage": "method positionToEdge cannot be resolved.",
-                        "functionName": "onClicked",
-                        "line": 331
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 39,
-                        "durationMicroseconds": 80,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 329
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 28,
-                        "durationMicroseconds": 673,
-                        "errorMessage": "",
-                        "functionName": "color",
-                        "line": 341
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 35,
-                        "durationMicroseconds": 54,
-                        "errorMessage": "Cannot access value for name screenEdge",
-                        "functionName": "color",
-                        "line": 344
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 72,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 351
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 36,
-                        "durationMicroseconds": 275,
-                        "errorMessage": "method positionToEdge cannot be resolved.",
-                        "functionName": "onClicked",
-                        "line": 358
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 39,
-                        "durationMicroseconds": 74,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 356
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 24,
-                        "durationMicroseconds": 62,
-                        "errorMessage": "Cannot access value for name followMouse",
-                        "functionName": "color",
-                        "line": 369
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 31,
-                        "durationMicroseconds": 41,
-                        "errorMessage": "Cannot access value for name followMouse",
-                        "functionName": "color",
-                        "line": 373
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 27,
-                        "durationMicroseconds": 33,
-                        "errorMessage": "Cannot access value for name followMouse",
-                        "functionName": "text",
-                        "line": 376
+                        "line": 388
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
                         "durationMicroseconds": 69,
                         "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 384
+                        "functionName": "fill",
+                        "line": 386
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 28,
+                        "durationMicroseconds": 678,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 398
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 28,
-                        "errorMessage": "Cannot access value for name followMouse",
-                        "functionName": "onClicked",
-                        "line": 391
-                    },
-                    {
-                        "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 64,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 389
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 651,
-                        "errorMessage": "",
+                        "durationMicroseconds": 46,
+                        "errorMessage": "Cannot access value for name screenEdge",
                         "functionName": "color",
                         "line": 401
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 77,
+                        "column": 43,
+                        "durationMicroseconds": 70,
                         "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 407
+                        "functionName": "centerIn",
+                        "line": 408
                     },
                     {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 107,
-                        "errorMessage": "",
-                        "functionName": "alignment",
+                        "codegenSuccessfull": false,
+                        "column": 36,
+                        "durationMicroseconds": 285,
+                        "errorMessage": "method positionToEdge cannot be resolved.",
+                        "functionName": "onClicked",
                         "line": 415
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 90,
+                        "column": 39,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
-                        "functionName": "elide",
-                        "line": 423
+                        "functionName": "fill",
+                        "line": 413
                     },
                     {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 105,
-                        "errorMessage": "",
-                        "functionName": "alignment",
-                        "line": 425
+                        "codegenSuccessfull": false,
+                        "column": 24,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "Cannot access value for name followMouse",
+                        "functionName": "color",
+                        "line": 426
                     },
                     {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 244,
-                        "errorMessage": "",
-                        "functionName": "onClicked",
+                        "codegenSuccessfull": false,
+                        "column": 31,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot access value for name followMouse",
+                        "functionName": "color",
+                        "line": 430
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 27,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "Cannot access value for name followMouse",
+                        "functionName": "text",
                         "line": 433
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 70,
+                        "column": 39,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 431
+                        "functionName": "centerIn",
+                        "line": 441
                     },
                     {
-                        "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 681,
-                        "errorMessage": "",
-                        "functionName": "color",
-                        "line": 442
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 70,
-                        "errorMessage": "",
-                        "functionName": "fill",
+                        "codegenSuccessfull": false,
+                        "column": 32,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "Cannot access value for name followMouse",
+                        "functionName": "onClicked",
                         "line": 448
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 96,
-                        "errorMessage": "",
-                        "functionName": "alignment",
-                        "line": 456
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 93,
-                        "errorMessage": "",
-                        "functionName": "elide",
-                        "line": 464
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 94,
-                        "errorMessage": "",
-                        "functionName": "alignment",
-                        "line": 466
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 217,
-                        "errorMessage": "",
-                        "functionName": "onClicked",
-                        "line": 474
-                    },
-                    {
-                        "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 472
+                        "line": 446
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 696,
+                        "durationMicroseconds": 786,
                         "errorMessage": "",
                         "functionName": "color",
-                        "line": 483
+                        "line": 458
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 489
+                        "line": 464
                     },
                     {
                         "codegenSuccessfull": true,
@@ -657,63 +553,175 @@
                         "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 497
+                        "line": 472
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "elide",
+                        "line": 480
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "alignment",
+                        "line": 482
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 32,
+                        "durationMicroseconds": 234,
+                        "errorMessage": "",
+                        "functionName": "onClicked",
+                        "line": 490
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 488
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 24,
+                        "durationMicroseconds": 631,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 499
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 79,
+                        "errorMessage": "",
+                        "functionName": "fill",
                         "line": 505
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "alignment",
-                        "line": 507
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 239,
-                        "errorMessage": "",
-                        "functionName": "onClicked",
-                        "line": 515
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 74,
-                        "errorMessage": "",
-                        "functionName": "fill",
                         "line": 513
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 24,
-                        "durationMicroseconds": 667,
+                        "column": 32,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
-                        "functionName": "color",
+                        "functionName": "elide",
+                        "line": 521
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 95,
+                        "errorMessage": "",
+                        "functionName": "alignment",
+                        "line": 523
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 32,
+                        "durationMicroseconds": 209,
+                        "errorMessage": "",
+                        "functionName": "onClicked",
+                        "line": 531
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 81,
+                        "errorMessage": "",
+                        "functionName": "fill",
                         "line": 529
                     },
                     {
                         "codegenSuccessfull": true,
+                        "column": 24,
+                        "durationMicroseconds": 640,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 540
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 77,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 546
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 103,
+                        "errorMessage": "",
+                        "functionName": "alignment",
+                        "line": 554
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 32,
+                        "durationMicroseconds": 92,
+                        "errorMessage": "",
+                        "functionName": "elide",
+                        "line": 562
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 103,
+                        "errorMessage": "",
+                        "functionName": "alignment",
+                        "line": 564
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 32,
+                        "durationMicroseconds": 218,
+                        "errorMessage": "",
+                        "functionName": "onClicked",
+                        "line": 572
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 570
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 24,
+                        "durationMicroseconds": 661,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 586
+                    },
+                    {
+                        "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 67,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 539
+                        "line": 596
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 247,
+                        "durationMicroseconds": 223,
                         "errorMessage": "method collapse cannot be resolved.",
                         "functionName": "onClicked",
-                        "line": 546
+                        "line": 603
                     },
                     {
                         "codegenSuccessfull": true,
@@ -721,7 +729,7 @@
                         "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 544
+                        "line": 601
                     }
                 ],
                 "filepath": "C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml"
