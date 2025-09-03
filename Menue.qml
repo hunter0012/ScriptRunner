@@ -180,6 +180,14 @@ Rectangle {
                         srunner.runExe("C:\\UserApps\\crackme.exe")
                     }
                 }
+                IconButton {
+                    icon: "🎵";
+                    tooltip: "exe silent";
+                    onClicked: {
+                        collapse()
+                        srunner.runExeAsAdmin("C:\\UserApps\\crackme.exe")
+                    }
+                }
                 IconButton { icon: "🎬"; tooltip: "Video Player"; onClicked: console.log("Video Player") }
                 IconButton { icon: "🖼️"; tooltip: "Photo Viewer"; onClicked: console.log("Photo Viewer") }
                 IconButton { icon: "🎮"; tooltip: "Games"; onClicked: console.log("Games") }

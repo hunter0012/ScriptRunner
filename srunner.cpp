@@ -95,3 +95,26 @@ void SRunner::runExe(const QString &exePath)
     qDebug() << "Process started asynchronously";
 }
 
+
+void SRunner::runExeAsAdmin(const QString &exePath)
+{
+    qDebug() << "Executing as admin:" << exePath;
+
+    std::wstring wexePath = exePath.toStdWString();
+
+    HINSTANCE result = ShellExecuteW(
+        nullptr,       // Parent window
+        L"runas",      // Verb: run as admin
+        wexePath.c_str(), // File to run
+        nullptr,       // Parameters
+        nullptr,       // Working directory
+        SW_SHOWNORMAL  // Show window normally
+        );
+
+    // Use reinterpret_cast<quintptr> to safely compare HINSTANCE on 64-bit
+    if (reinterpret_cast<quintptr>(result) <= 32) {
+        qDebug() << "Failed to launch as admin. Error code:" << reinterpret_cast<quintptr>(result);
+    } else {
+        qDebug() << "Process started as administrator";
+    }
+}

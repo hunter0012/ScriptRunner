@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 0,
+                        "durationMicroseconds": 1,
                         "errorMessage": "Cannot resolve property type  for binding on width.",
                         "functionName": "width",
                         "line": 9
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 479,
+                        "durationMicroseconds": 841,
                         "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
                         "functionName": "initializePosition",
                         "line": 69
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 195,
+                        "durationMicroseconds": 287,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "ensureExpandedOnScreen",
                         "line": 207
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 267,
+                        "durationMicroseconds": 223,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "checkMouseDistance",
                         "line": 222
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 191,
+                        "durationMicroseconds": 109,
                         "errorMessage": "",
                         "functionName": "collapse",
                         "line": 241
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 486,
+                        "durationMicroseconds": 15454,
                         "errorMessage": "",
                         "functionName": "toggleExpanded",
                         "line": 246
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 1478,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "detectScreenEdge",
                         "line": 254
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 76,
                         "errorMessage": "Cannot retrieve a non-object type by ID: root",
                         "functionName": "onExpandedChanged",
                         "line": 501
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 195,
+                        "durationMicroseconds": 167,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 67
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 70,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "color",
                         "line": 283
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "radius",
                         "line": 284
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 110,
+                        "durationMicroseconds": 159,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 282
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name docked_width",
                         "functionName": "width",
                         "line": 288
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name docked_height",
                         "functionName": "height",
                         "line": 289
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 330,
                         "errorMessage": "Cannot load property color from (component in C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml)::parent with type QQuickItem.",
                         "functionName": "color",
                         "line": 290
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name screenEdge",
                         "functionName": "visible",
                         "line": 291
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 81,
+                        "durationMicroseconds": 132,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 292
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 3609,
+                        "durationMicroseconds": 357,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 294
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 295,
+                        "durationMicroseconds": 356,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 295
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 73,
                         "errorMessage": "Cannot access value for name docked_width",
                         "functionName": "width",
                         "line": 301
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name docked_height",
                         "functionName": "height",
                         "line": 302
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 155,
+                        "durationMicroseconds": 104,
                         "errorMessage": "Cannot load property color from (component in C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml)::parent with type QQuickItem.",
                         "functionName": "color",
                         "line": 303
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot access value for name screenEdge",
                         "functionName": "visible",
                         "line": 304
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 136,
+                        "durationMicroseconds": 134,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 305
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 294,
+                        "durationMicroseconds": 312,
                         "errorMessage": "",
                         "functionName": "top",
                         "line": 307
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 255,
+                        "durationMicroseconds": 240,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 308
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name docked_width",
                         "functionName": "width",
                         "line": 314
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name docked_height",
                         "functionName": "height",
                         "line": 315
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 133,
+                        "durationMicroseconds": 100,
                         "errorMessage": "Cannot load property color from (component in C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml)::parent with type QQuickItem.",
                         "functionName": "color",
                         "line": 316
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot access value for name screenEdge",
                         "functionName": "visible",
                         "line": 317
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 144,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 318
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 652,
+                        "durationMicroseconds": 289,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 320
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 391,
+                        "durationMicroseconds": 256,
                         "errorMessage": "",
                         "functionName": "left",
                         "line": 321
@@ -350,7 +350,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 66,
                         "errorMessage": "Cannot access value for name docked_width",
                         "functionName": "width",
                         "line": 327
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 38,
                         "errorMessage": "Cannot access value for name docked_height",
                         "functionName": "height",
                         "line": 328
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 99,
                         "errorMessage": "Cannot load property color from (component in C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml)::parent with type QQuickItem.",
                         "functionName": "color",
                         "line": 329
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot access value for name screenEdge",
                         "functionName": "visible",
                         "line": 330
@@ -382,7 +382,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 21,
-                        "durationMicroseconds": 377,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "radius",
                         "line": 331
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 256,
+                        "durationMicroseconds": 242,
                         "errorMessage": "",
                         "functionName": "bottom",
                         "line": 333
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 338,
+                        "durationMicroseconds": 211,
                         "errorMessage": "",
                         "functionName": "right",
                         "line": 334
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 77,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "enabled",
                         "line": 342
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot find name isDragging",
                         "functionName": "onPressed",
                         "line": 344
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "onPressed",
                         "line": 344
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 80,
                         "errorMessage": "Cannot access value for name isDragging",
                         "functionName": "onPositionChanged",
                         "line": 353
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 128,
+                        "durationMicroseconds": 148,
                         "errorMessage": "",
                         "functionName": "onPositionChanged",
                         "line": 353
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot find name isDragging",
                         "functionName": "onReleased",
                         "line": 357
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "onReleased",
                         "line": 357
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 30,
-                        "durationMicroseconds": 388,
+                        "durationMicroseconds": 496,
                         "errorMessage": "method toggleExpanded cannot be resolved.",
                         "functionName": "onDoubleClicked",
                         "line": 363
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 30,
-                        "durationMicroseconds": 134,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "onDoubleClicked",
                         "line": 363
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 340
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "enabled",
                         "line": 373
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 257,
+                        "durationMicroseconds": 221,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 374
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 24,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 113,
                         "errorMessage": "",
                         "functionName": "onClicked",
                         "line": 374
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 115,
+                        "durationMicroseconds": 129,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 371
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 86,
+                        "durationMicroseconds": 108,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "visible",
                         "line": 383
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 226,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 382
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "visible",
                         "line": 392
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 391
@@ -550,7 +550,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot access value for name expanded",
                         "functionName": "visible",
                         "line": 399
@@ -558,7 +558,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 1434,
+                        "durationMicroseconds": 700,
                         "errorMessage": "",
                         "functionName": "onSettingsBtn",
                         "line": 400
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 259,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 398
@@ -574,7 +574,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 271,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 429
@@ -582,7 +582,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 239,
+                        "durationMicroseconds": 177,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 433
@@ -598,7 +598,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 259,
+                        "durationMicroseconds": 170,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 445
@@ -606,7 +606,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot access value for name undocked_width",
                         "functionName": "width",
                         "line": 458
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot access value for name undocked_height",
                         "functionName": "height",
                         "line": 459
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 470
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 168,
+                        "durationMicroseconds": 218,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 474
@@ -638,7 +638,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 178,
+                        "durationMicroseconds": 173,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 481

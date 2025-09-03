@@ -84,6 +84,18 @@
                         "index": 2,
                         "name": "runExeInCmd",
                         "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "exePath",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "runExeAsAdmin",
+                        "returnType": "void"
                     }
                 ],
                 "object": true,
