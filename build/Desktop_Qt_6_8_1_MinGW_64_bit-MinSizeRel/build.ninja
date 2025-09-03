@@ -47,7 +47,7 @@ cmake_ninja_workdir = C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/bui
 #############################################
 # Order-only phony target for appScriptRunner
 
-build cmake_object_order_depends_target_appScriptRunner: phony || .qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp .qt/rcc/qrc_qmake_ScriptRunner.cpp .rcc/qmlcache/appScriptRunner_Main_qml.cpp .rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_qmlcache_loader.cpp ScriptRunner/appScriptRunner.qmltypes appScriptRunner_autogen appScriptRunner_autogen/mocs_compilation.cpp appScriptRunner_autogen/timestamp appScriptRunner_autogen_timestamp_deps appScriptRunner_qmlimportscan appScriptRunner_tooling appscriptrunner_qmltyperegistrations.cpp meta_types/appScriptRunner_json_file_list.txt meta_types/appScriptRunner_json_file_list.txt.timestamp meta_types/qt6appscriptrunner_minsizerel_metatypes.json meta_types/qt6appscriptrunner_minsizerel_metatypes.json.gen
+build cmake_object_order_depends_target_appScriptRunner: phony || .qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp .qt/rcc/qrc_qmake_ScriptRunner.cpp .rcc/qmlcache/appScriptRunner_Main_qml.cpp .rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_Menue_qml.cpp .rcc/qmlcache/appScriptRunner_Menue_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_Settings_qml.cpp .rcc/qmlcache/appScriptRunner_Settings_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_qmlcache_loader.cpp ScriptRunner/appScriptRunner.qmltypes appScriptRunner_autogen appScriptRunner_autogen/mocs_compilation.cpp appScriptRunner_autogen/timestamp appScriptRunner_autogen_timestamp_deps appScriptRunner_qmlimportscan appScriptRunner_tooling appscriptrunner_qmltyperegistrations.cpp meta_types/appScriptRunner_json_file_list.txt meta_types/appScriptRunner_json_file_list.txt.timestamp meta_types/qt6appscriptrunner_minsizerel_metatypes.json meta_types/qt6appscriptrunner_minsizerel_metatypes.json.gen
 
 build CMakeFiles/appScriptRunner.dir/appScriptRunner_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__appScriptRunner_unscanned_MinSizeRel C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/appScriptRunner_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_appScriptRunner
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
@@ -89,6 +89,14 @@ build CMakeFiles/appScriptRunner.dir/mousepositionprovider.cpp.obj: CXX_COMPILER
   OBJECT_DIR = CMakeFiles\appScriptRunner.dir
   OBJECT_FILE_DIR = CMakeFiles\appScriptRunner.dir
 
+build CMakeFiles/appScriptRunner.dir/srunner.cpp.obj: CXX_COMPILER__appScriptRunner_unscanned_MinSizeRel C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/srunner.cpp || cmake_object_order_depends_target_appScriptRunner
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\appScriptRunner.dir\srunner.cpp.obj.d
+  FLAGS = -Os -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/appScriptRunner_autogen/include -IC:/Users/Hunter/Desktop/Workspace/github/ScriptRunner -isystem C:/Qt/6.8.1/mingw_64/include/QtQml/6.8.1 -isystem C:/Qt/6.8.1/mingw_64/include/QtQml/6.8.1/QtQml -isystem C:/Qt/6.8.1/mingw_64/include/QtCore/6.8.1 -isystem C:/Qt/6.8.1/mingw_64/include/QtCore/6.8.1/QtCore -isystem C:/Qt/6.8.1/mingw_64/include/QtCore -isystem C:/Qt/6.8.1/mingw_64/include -isystem C:/Qt/6.8.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.1/mingw_64/include/QtQml -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlIntegration -isystem C:/Qt/6.8.1/mingw_64/include/QtNetwork -isystem C:/Qt/6.8.1/mingw_64/include/QtQuick -isystem C:/Qt/6.8.1/mingw_64/include/QtGui -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlMeta -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlModels -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlWorkerScript -isystem C:/Qt/6.8.1/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\appScriptRunner.dir
+  OBJECT_FILE_DIR = CMakeFiles\appScriptRunner.dir
+
 build CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_qmlcache_loader.cpp.obj: CXX_COMPILER__appScriptRunner_unscanned_MinSizeRel C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_qmlcache_loader.cpp || cmake_object_order_depends_target_appScriptRunner
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\appScriptRunner.dir\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.rcc\qmlcache\appScriptRunner_qmlcache_loader.cpp.obj.d
@@ -100,6 +108,22 @@ build CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSize
 build CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Main_qml.cpp.obj: CXX_COMPILER__appScriptRunner_unscanned_MinSizeRel C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Main_qml.cpp || cmake_object_order_depends_target_appScriptRunner
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\appScriptRunner.dir\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.rcc\qmlcache\appScriptRunner_Main_qml.cpp.obj.d
+  FLAGS = -Os -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/appScriptRunner_autogen/include -IC:/Users/Hunter/Desktop/Workspace/github/ScriptRunner -isystem C:/Qt/6.8.1/mingw_64/include/QtQml/6.8.1 -isystem C:/Qt/6.8.1/mingw_64/include/QtQml/6.8.1/QtQml -isystem C:/Qt/6.8.1/mingw_64/include/QtCore/6.8.1 -isystem C:/Qt/6.8.1/mingw_64/include/QtCore/6.8.1/QtCore -isystem C:/Qt/6.8.1/mingw_64/include/QtCore -isystem C:/Qt/6.8.1/mingw_64/include -isystem C:/Qt/6.8.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.1/mingw_64/include/QtQml -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlIntegration -isystem C:/Qt/6.8.1/mingw_64/include/QtNetwork -isystem C:/Qt/6.8.1/mingw_64/include/QtQuick -isystem C:/Qt/6.8.1/mingw_64/include/QtGui -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlMeta -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlModels -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlWorkerScript -isystem C:/Qt/6.8.1/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\appScriptRunner.dir
+  OBJECT_FILE_DIR = CMakeFiles\appScriptRunner.dir\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.rcc\qmlcache
+
+build CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Menue_qml.cpp.obj: CXX_COMPILER__appScriptRunner_unscanned_MinSizeRel C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Menue_qml.cpp || cmake_object_order_depends_target_appScriptRunner
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\appScriptRunner.dir\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.rcc\qmlcache\appScriptRunner_Menue_qml.cpp.obj.d
+  FLAGS = -Os -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/appScriptRunner_autogen/include -IC:/Users/Hunter/Desktop/Workspace/github/ScriptRunner -isystem C:/Qt/6.8.1/mingw_64/include/QtQml/6.8.1 -isystem C:/Qt/6.8.1/mingw_64/include/QtQml/6.8.1/QtQml -isystem C:/Qt/6.8.1/mingw_64/include/QtCore/6.8.1 -isystem C:/Qt/6.8.1/mingw_64/include/QtCore/6.8.1/QtCore -isystem C:/Qt/6.8.1/mingw_64/include/QtCore -isystem C:/Qt/6.8.1/mingw_64/include -isystem C:/Qt/6.8.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.1/mingw_64/include/QtQml -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlIntegration -isystem C:/Qt/6.8.1/mingw_64/include/QtNetwork -isystem C:/Qt/6.8.1/mingw_64/include/QtQuick -isystem C:/Qt/6.8.1/mingw_64/include/QtGui -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlMeta -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlModels -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlWorkerScript -isystem C:/Qt/6.8.1/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\appScriptRunner.dir
+  OBJECT_FILE_DIR = CMakeFiles\appScriptRunner.dir\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.rcc\qmlcache
+
+build CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Settings_qml.cpp.obj: CXX_COMPILER__appScriptRunner_unscanned_MinSizeRel C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Settings_qml.cpp || cmake_object_order_depends_target_appScriptRunner
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\appScriptRunner.dir\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.rcc\qmlcache\appScriptRunner_Settings_qml.cpp.obj.d
   FLAGS = -Os -DNDEBUG -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/appScriptRunner_autogen/include -IC:/Users/Hunter/Desktop/Workspace/github/ScriptRunner -isystem C:/Qt/6.8.1/mingw_64/include/QtQml/6.8.1 -isystem C:/Qt/6.8.1/mingw_64/include/QtQml/6.8.1/QtQml -isystem C:/Qt/6.8.1/mingw_64/include/QtCore/6.8.1 -isystem C:/Qt/6.8.1/mingw_64/include/QtCore/6.8.1/QtCore -isystem C:/Qt/6.8.1/mingw_64/include/QtCore -isystem C:/Qt/6.8.1/mingw_64/include -isystem C:/Qt/6.8.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.1/mingw_64/include/QtQml -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlIntegration -isystem C:/Qt/6.8.1/mingw_64/include/QtNetwork -isystem C:/Qt/6.8.1/mingw_64/include/QtQuick -isystem C:/Qt/6.8.1/mingw_64/include/QtGui -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlMeta -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlModels -isystem C:/Qt/6.8.1/mingw_64/include/QtQmlWorkerScript -isystem C:/Qt/6.8.1/mingw_64/include/QtOpenGL
   OBJECT_DIR = CMakeFiles\appScriptRunner.dir
@@ -121,7 +145,7 @@ build CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSize
 #############################################
 # Link the executable appScriptRunner.exe
 
-build appScriptRunner.exe: CXX_EXECUTABLE_LINKER__appScriptRunner_MinSizeRel CMakeFiles/appScriptRunner.dir/appScriptRunner_autogen/mocs_compilation.cpp.obj CMakeFiles/appScriptRunner.dir/main.cpp.obj CMakeFiles/appScriptRunner.dir/appscriptrunner_qmltyperegistrations.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qrc_qmake_ScriptRunner.cpp.obj CMakeFiles/appScriptRunner.dir/mousepositionprovider.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_qmlcache_loader.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Main_qml.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp.obj | C$:/Qt/6.8.1/mingw_64/lib/libQt6Quick.a C$:/Qt/6.8.1/mingw_64/lib/libQt6QmlMeta.a C$:/Qt/6.8.1/mingw_64/lib/libQt6QmlWorkerScript.a C$:/Qt/6.8.1/mingw_64/lib/libQt6QmlModels.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Qml.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Network.a C$:/Qt/6.8.1/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.8.1/mingw_64/lib/libQt6EntryPoint.a || appScriptRunner_autogen appScriptRunner_autogen_timestamp_deps appScriptRunner_qmlimportscan appScriptRunner_tooling
+build appScriptRunner.exe: CXX_EXECUTABLE_LINKER__appScriptRunner_MinSizeRel CMakeFiles/appScriptRunner.dir/appScriptRunner_autogen/mocs_compilation.cpp.obj CMakeFiles/appScriptRunner.dir/main.cpp.obj CMakeFiles/appScriptRunner.dir/appscriptrunner_qmltyperegistrations.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qrc_qmake_ScriptRunner.cpp.obj CMakeFiles/appScriptRunner.dir/mousepositionprovider.cpp.obj CMakeFiles/appScriptRunner.dir/srunner.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_qmlcache_loader.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Main_qml.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Menue_qml.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Settings_qml.cpp.obj CMakeFiles/appScriptRunner.dir/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp.obj | C$:/Qt/6.8.1/mingw_64/lib/libQt6Quick.a C$:/Qt/6.8.1/mingw_64/lib/libQt6QmlMeta.a C$:/Qt/6.8.1/mingw_64/lib/libQt6QmlWorkerScript.a C$:/Qt/6.8.1/mingw_64/lib/libQt6QmlModels.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Qml.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Network.a C$:/Qt/6.8.1/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.8.1/mingw_64/lib/libQt6EntryPoint.a || appScriptRunner_autogen appScriptRunner_autogen_timestamp_deps appScriptRunner_qmlimportscan appScriptRunner_tooling
   FLAGS = -Os -DNDEBUG
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.8.1/mingw_64/lib/libQt6Quick.a  C:/Qt/6.8.1/mingw_64/lib/libQt6QmlMeta.a  C:/Qt/6.8.1/mingw_64/lib/libQt6QmlWorkerScript.a  C:/Qt/6.8.1/mingw_64/lib/libQt6QmlModels.a  C:/Qt/6.8.1/mingw_64/lib/libQt6Qml.a  C:/Qt/6.8.1/mingw_64/lib/libQt6Network.a  -lws2_32  C:/Qt/6.8.1/mingw_64/lib/libQt6OpenGL.a  C:/Qt/6.8.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.8.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.8.1/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -luser32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -184,19 +208,19 @@ build all_qmllint_module: phony appScriptRunner_qmllint_module
 #############################################
 # Utility command for appScriptRunner_tooling
 
-build appScriptRunner_tooling: phony ScriptRunner/Main.qml
+build appScriptRunner_tooling: phony ScriptRunner/Main.qml ScriptRunner/Menue.qml ScriptRunner/Settings.qml
 
 
 #############################################
 # Utility command for module_appScriptRunner_aotstats_target
 
-build module_appScriptRunner_aotstats_target: phony CMakeFiles/module_appScriptRunner_aotstats_target .rcc/qmlcache/module_appScriptRunner.aotstats .rcc/qmlcache/appScriptRunner_Main_qml.cpp .rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats appscriptrunner_qmltyperegistrations.cpp ScriptRunner/appScriptRunner.qmltypes appScriptRunner_qmltyperegistration
+build module_appScriptRunner_aotstats_target: phony CMakeFiles/module_appScriptRunner_aotstats_target .rcc/qmlcache/module_appScriptRunner.aotstats .rcc/qmlcache/appScriptRunner_Main_qml.cpp .rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_Menue_qml.cpp .rcc/qmlcache/appScriptRunner_Menue_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_Settings_qml.cpp .rcc/qmlcache/appScriptRunner_Settings_qml.cpp.aotstats appscriptrunner_qmltyperegistrations.cpp ScriptRunner/appScriptRunner.qmltypes appScriptRunner_qmltyperegistration
 
 
 #############################################
 # Utility command for all_aotstats
 
-build all_aotstats: phony CMakeFiles/all_aotstats .rcc/qmlcache/all_aotstats.aotstats .rcc/qmlcache/all_aotstats.txt .rcc/qmlcache/module_appScriptRunner.aotstats .rcc/qmlcache/appScriptRunner_Main_qml.cpp .rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats appscriptrunner_qmltyperegistrations.cpp ScriptRunner/appScriptRunner.qmltypes module_appScriptRunner_aotstats_target
+build all_aotstats: phony CMakeFiles/all_aotstats .rcc/qmlcache/all_aotstats.aotstats .rcc/qmlcache/all_aotstats.txt .rcc/qmlcache/module_appScriptRunner.aotstats .rcc/qmlcache/appScriptRunner_Main_qml.cpp .rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_Menue_qml.cpp .rcc/qmlcache/appScriptRunner_Menue_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_Settings_qml.cpp .rcc/qmlcache/appScriptRunner_Settings_qml.cpp.aotstats appscriptrunner_qmltyperegistrations.cpp ScriptRunner/appScriptRunner.qmltypes module_appScriptRunner_aotstats_target
 
 
 #############################################
@@ -329,9 +353,27 @@ build .rcc/qmlcache/appScriptRunner_Main_qml.cpp .rcc/qmlcache/appScriptRunner_M
 
 
 #############################################
+# Custom command for .rcc\qmlcache\appScriptRunner_Menue_qml.cpp
+
+build .rcc/qmlcache/appScriptRunner_Menue_qml.cpp .rcc/qmlcache/appScriptRunner_Menue_qml.cpp.aotstats | ${cmake_ninja_workdir}.rcc/qmlcache/appScriptRunner_Menue_qml.cpp ${cmake_ninja_workdir}.rcc/qmlcache/appScriptRunner_Menue_qml.cpp.aotstats: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmlcachegen.exe C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml .qt/rcc/qmake_ScriptRunner.qrc .qt/rcc/appScriptRunner_raw_qml_0.qrc ScriptRunner/appScriptRunner.qmltypes ScriptRunner/qmldir
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel && "C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache && C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.8.1/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/ScriptRunner/Menue.qml -I C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel -I C:/Qt/6.8.1/mingw_64/qml -i C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/ScriptRunner/qmldir --resource C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qmake_ScriptRunner.qrc --resource C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/appScriptRunner_raw_qml_0.qrc --dump-aot-stats --module-id=ScriptRunner(appScriptRunner) -o C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Menue_qml.cpp C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml"
+  DESC = Generating .rcc/qmlcache/appScriptRunner_Menue_qml.cpp, .rcc/qmlcache/appScriptRunner_Menue_qml.cpp.aotstats
+  restat = 1
+
+
+#############################################
+# Custom command for .rcc\qmlcache\appScriptRunner_Settings_qml.cpp
+
+build .rcc/qmlcache/appScriptRunner_Settings_qml.cpp .rcc/qmlcache/appScriptRunner_Settings_qml.cpp.aotstats | ${cmake_ninja_workdir}.rcc/qmlcache/appScriptRunner_Settings_qml.cpp ${cmake_ninja_workdir}.rcc/qmlcache/appScriptRunner_Settings_qml.cpp.aotstats: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmlcachegen.exe C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml .qt/rcc/qmake_ScriptRunner.qrc .qt/rcc/appScriptRunner_raw_qml_0.qrc ScriptRunner/appScriptRunner.qmltypes ScriptRunner/qmldir
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel && "C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache && C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.8.1/mingw_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/ScriptRunner/Settings.qml -I C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel -I C:/Qt/6.8.1/mingw_64/qml -i C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/ScriptRunner/qmldir --resource C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qmake_ScriptRunner.qrc --resource C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/appScriptRunner_raw_qml_0.qrc --dump-aot-stats --module-id=ScriptRunner(appScriptRunner) -o C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/appScriptRunner_Settings_qml.cpp C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml"
+  DESC = Generating .rcc/qmlcache/appScriptRunner_Settings_qml.cpp, .rcc/qmlcache/appScriptRunner_Settings_qml.cpp.aotstats
+  restat = 1
+
+
+#############################################
 # Custom command for .qt\rcc\qrc_appScriptRunner_raw_qml_0.cpp
 
-build .qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp | ${cmake_ninja_workdir}.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml .qt/rcc/appScriptRunner_raw_qml_0.qrc C$:/Qt/6.8.1/mingw_64/bin/rcc.exe || appScriptRunner_autogen appScriptRunner_autogen_timestamp_deps appScriptRunner_qmlimportscan appScriptRunner_tooling
+build .qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp | ${cmake_ninja_workdir}.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp: CUSTOM_COMMAND C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml .qt/rcc/appScriptRunner_raw_qml_0.qrc C$:/Qt/6.8.1/mingw_64/bin/rcc.exe || appScriptRunner_autogen appScriptRunner_autogen_timestamp_deps appScriptRunner_qmlimportscan appScriptRunner_tooling
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel && C:\Qt\6.8.1\mingw_64\bin\rcc.exe --output C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/qrc_appScriptRunner_raw_qml_0.cpp --name appScriptRunner_raw_qml_0 C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/rcc/appScriptRunner_raw_qml_0.qrc --no-zstd"
   DESC = Running rcc for resource appScriptRunner_raw_qml_0
   restat = 1
@@ -366,21 +408,21 @@ build CMakeFiles/appScriptRunner_qmltyperegistration | ${cmake_ninja_workdir}CMa
 #############################################
 # Custom command for CMakeFiles\appScriptRunner_qmllint
 
-build CMakeFiles/appScriptRunner_qmllint | ${cmake_ninja_workdir}CMakeFiles/appScriptRunner_qmllint: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmllint.exe C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml .rcc/qmllint/appScriptRunner.rsp || all_qmltyperegistrations appScriptRunner_qmltyperegistration
+build CMakeFiles/appScriptRunner_qmllint | ${cmake_ninja_workdir}CMakeFiles/appScriptRunner_qmllint: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmllint.exe C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml .rcc/qmllint/appScriptRunner.rsp || all_qmltyperegistrations appScriptRunner_qmltyperegistration
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner && C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.8.1/mingw_64/bin/qmllint.exe @C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmllint/appScriptRunner.rsp"
 
 
 #############################################
 # Custom command for CMakeFiles\appScriptRunner_qmllint_json
 
-build CMakeFiles/appScriptRunner_qmllint_json | ${cmake_ninja_workdir}CMakeFiles/appScriptRunner_qmllint_json: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmllint.exe C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml .rcc/qmllint/appScriptRunner_json.rsp || all_qmltyperegistrations appScriptRunner_qmltyperegistration
+build CMakeFiles/appScriptRunner_qmllint_json | ${cmake_ninja_workdir}CMakeFiles/appScriptRunner_qmllint_json: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmllint.exe C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml .rcc/qmllint/appScriptRunner_json.rsp || all_qmltyperegistrations appScriptRunner_qmltyperegistration
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner && C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.8.1/mingw_64/bin/qmllint.exe @C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmllint/appScriptRunner_json.rsp"
 
 
 #############################################
 # Custom command for CMakeFiles\appScriptRunner_qmllint_module
 
-build CMakeFiles/appScriptRunner_qmllint_module | ${cmake_ninja_workdir}CMakeFiles/appScriptRunner_qmllint_module: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmllint.exe C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml .rcc/qmllint/appScriptRunner_module.rsp || all_qmltyperegistrations appScriptRunner_qmltyperegistration
+build CMakeFiles/appScriptRunner_qmllint_module | ${cmake_ninja_workdir}CMakeFiles/appScriptRunner_qmllint_module: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmllint.exe C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml .rcc/qmllint/appScriptRunner_module.rsp || all_qmltyperegistrations appScriptRunner_qmltyperegistration
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner && C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.8.1/mingw_64/bin/qmllint.exe @C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmllint/appScriptRunner_module.rsp"
 
 
@@ -394,6 +436,24 @@ build ScriptRunner/Main.qml | ${cmake_ninja_workdir}ScriptRunner/Main.qml: CUSTO
 
 
 #############################################
+# Custom command for ScriptRunner\Menue.qml
+
+build ScriptRunner/Menue.qml | ${cmake_ninja_workdir}ScriptRunner/Menue.qml: CUSTOM_COMMAND C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner && "C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/ScriptRunner/Menue.qml"
+  DESC = Copying Menue.qml to C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/ScriptRunner/Menue.qml
+  restat = 1
+
+
+#############################################
+# Custom command for ScriptRunner\Settings.qml
+
+build ScriptRunner/Settings.qml | ${cmake_ninja_workdir}ScriptRunner/Settings.qml: CUSTOM_COMMAND C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner && "C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/ScriptRunner/Settings.qml"
+  DESC = Copying Settings.qml to C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/ScriptRunner/Settings.qml
+  restat = 1
+
+
+#############################################
 # Phony custom command for CMakeFiles\module_appScriptRunner_aotstats_target
 
 build CMakeFiles/module_appScriptRunner_aotstats_target | ${cmake_ninja_workdir}CMakeFiles/module_appScriptRunner_aotstats_target: phony .rcc/qmlcache/module_appScriptRunner.aotstats || appScriptRunner_qmltyperegistration
@@ -402,7 +462,7 @@ build CMakeFiles/module_appScriptRunner_aotstats_target | ${cmake_ninja_workdir}
 #############################################
 # Custom command for .rcc\qmlcache\module_appScriptRunner.aotstats
 
-build .rcc/qmlcache/module_appScriptRunner.aotstats | ${cmake_ninja_workdir}.rcc/qmlcache/module_appScriptRunner.aotstats: CUSTOM_COMMAND .rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats .rcc/qmlcache/module_appScriptRunner.aotstatslist || appScriptRunner_qmltyperegistration
+build .rcc/qmlcache/module_appScriptRunner.aotstats | ${cmake_ninja_workdir}.rcc/qmlcache/module_appScriptRunner.aotstats: CUSTOM_COMMAND .rcc/qmlcache/appScriptRunner_Main_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_Menue_qml.cpp.aotstats .rcc/qmlcache/appScriptRunner_Settings_qml.cpp.aotstats .rcc/qmlcache/module_appScriptRunner.aotstatslist || appScriptRunner_qmltyperegistration
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel && C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.8.1/mingw_64/bin/qmlaotstats.exe aggregate C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/module_appScriptRunner.aotstatslist C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.rcc/qmlcache/module_appScriptRunner.aotstats"
   DESC = Generating .rcc/qmlcache/module_appScriptRunner.aotstats
   restat = 1
@@ -433,7 +493,7 @@ build CMakeFiles/appScriptRunner_qmlimportscan | ${cmake_ninja_workdir}CMakeFile
 #############################################
 # Custom command for .qt\qml_imports\appScriptRunner_build.cmake
 
-build .qt/qml_imports/appScriptRunner_build.cmake | ${cmake_ninja_workdir}.qt/qml_imports/appScriptRunner_build.cmake: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmlimportscanner.exe .qt/rcc/qmake_ScriptRunner.qrc .qt/rcc/appScriptRunner_raw_qml_0.qrc C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml
+build .qt/qml_imports/appScriptRunner_build.cmake | ${cmake_ninja_workdir}.qt/qml_imports/appScriptRunner_build.cmake: CUSTOM_COMMAND C$:/Qt/6.8.1/mingw_64/bin/qmlimportscanner.exe .qt/rcc/qmake_ScriptRunner.qrc .qt/rcc/appScriptRunner_raw_qml_0.qrc C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Main.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Menue.qml C$:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/Settings.qml
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner && C:\Users\Hunter\Desktop\Workspace\github\ScriptRunner\build\Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.8.1/mingw_64/bin/qmlimportscanner.exe @C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/.qt/qml_imports/appScriptRunner_build.rsp"
   DESC = Running qmlimportscanner for appScriptRunner
   restat = 1

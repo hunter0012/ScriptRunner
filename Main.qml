@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
 import QtQuick.Layouts
-import com.example 1.0
+import com.SRunner 1.0
 
 ApplicationWindow {
     id: root
@@ -12,11 +12,11 @@ ApplicationWindow {
     color: "transparent"
     visible: true
 
+
     property int docked_height: 30
     property int docked_width: 15
 
-
-    property int undocked_width: 220
+    property int undocked_width: 250
     property int undocked_height: 300
     property int closeThreshold: 100
 
@@ -38,6 +38,16 @@ ApplicationWindow {
     property int edgeSnapThreshold: 50 // pixels from edge to snap
     property bool snappingToEdge: false
 
+    // Prevent collapsing when settings popup is open
+    property bool settingsOpen: false
+
+    // Corner radius properties
+    property int cornerRadius: 4
+    property int topLeftRadius: 5
+    property int topRightRadius: 5
+    property int bottomLeftRadius: 5
+    property int bottomRightRadius: 5
+
     MousePositionProvider {
         id: mouseProvider
         onCursorPositionChanged: function(cursorPosition) {
@@ -48,7 +58,7 @@ ApplicationWindow {
                 updateDragPosition(cursorPosition.x, cursorPosition.y)
             } else if (followMouse && !expanded) {
                 followMousePosition(cursorPosition.x, cursorPosition.y)
-            } else {
+            } else if (!settingsOpen) { // Only check mouse distance if settings not open
                 checkMouseDistance()
             }
         }
@@ -62,7 +72,8 @@ ApplicationWindow {
 
     function positionToEdge(edge) {
         screenEdge = edge
-        console.log("new edge : " + edge)
+        updateCornerRadius(edge)
+
         switch(edge) {
             case "right":
                 root.x = Screen.width - (expanded ? undocked_width : docked_width)
@@ -83,6 +94,35 @@ ApplicationWindow {
                 root.y = Screen.height - height
                 root.docked_height = 15
                 root.docked_width = 30
+                break;
+        }
+    }
+
+    function updateCornerRadius(edge) {
+        switch(edge) {
+            case "right":
+                topLeftRadius = cornerRadius
+                topRightRadius = 0
+                bottomLeftRadius = cornerRadius
+                bottomRightRadius = 0
+                break;
+            case "left":
+                topLeftRadius = 0
+                topRightRadius = cornerRadius
+                bottomLeftRadius = 0
+                bottomRightRadius = cornerRadius
+                break;
+            case "top":
+                topLeftRadius = 0
+                topRightRadius = 0
+                bottomLeftRadius = cornerRadius
+                bottomRightRadius = cornerRadius
+                break;
+            case "bottom":
+                topLeftRadius = cornerRadius
+                topRightRadius = cornerRadius
+                bottomLeftRadius = 0
+                bottomRightRadius = 0
                 break;
         }
     }
@@ -180,7 +220,8 @@ ApplicationWindow {
     }
 
     function checkMouseDistance() {
-        if (!expanded || isDragging) return
+        // Don't collapse if settings are open or if we're dragging
+        if (settingsOpen || !expanded || isDragging) return
 
         var mouseInside = globalMouseX >= root.x && globalMouseX <= root.x + root.width &&
                            globalMouseY >= root.y && globalMouseY <= root.y + root.height
@@ -203,6 +244,9 @@ ApplicationWindow {
     }
 
     function toggleExpanded() {
+        // Don't toggle if settings are open
+        if (settingsOpen) return
+
         expanded = !expanded
         if (expanded) ensureExpandedOnScreen()
     }
@@ -232,18 +276,70 @@ ApplicationWindow {
         return "bottom"
     }
 
-    // Main container with simple rounded corners
+    // Main container with dynamic rounded corners
     Rectangle {
         id: container
         anchors.fill: parent
-        color: expanded ? "#2C3E50" : "#3498DB"
-        radius: expanded ? 10 : 0 // Only round corners when expanded
+        color: expanded ? "#2C3E50" : (dragArea.containsMouse)? "#FFFF00": "#3498DB"
+        radius: expanded ? 0 : cornerRadius // Only apply radius when not expanded
+
+        // // Top-left corner mask
+        Rectangle {
+            width: docked_width/2
+            height: docked_height/2
+            color: parent.color
+            visible: screenEdge === "left" || screenEdge === "top"
+            radius: topLeftRadius
+            anchors {
+                top: parent.top
+                left: parent.left
+            }
+        }
+
+        // Top-right corner mask
+        Rectangle {
+            width: docked_width/2
+            height: docked_height/2
+            color: parent.color
+            visible: screenEdge === "right" || screenEdge === "top"
+            radius: topRightRadius
+            anchors {
+                top: parent.top
+                right: parent.right
+            }
+        }
+
+        // Bottom-left corner mask
+        Rectangle {
+            width: docked_width/2
+            height: docked_height/2
+            color: parent.color
+            visible: screenEdge === "left" || screenEdge === "bottom"
+            radius: bottomLeftRadius
+            anchors {
+                bottom: parent.bottom
+                left: parent.left
+            }
+        }
+
+        // Bottom-right corner mask
+        Rectangle {
+            width: docked_width/2
+            height: docked_height/2
+            color: parent.color
+            visible: screenEdge === "right" || screenEdge === "bottom"
+            radius: bottomRightRadius
+            anchors {
+                bottom: parent.bottom
+                right: parent.right
+            }
+        }
 
         MouseArea {
             id: dragArea
             anchors.fill: parent
             hoverEnabled: true
-            enabled: !expanded
+            enabled: !expanded && !settingsOpen // Disable dragging when settings are open
 
             onPressed: function(mouse) {
                 isDragging = true
@@ -267,13 +363,14 @@ ApplicationWindow {
             onDoubleClicked: function() {
                 toggleExpanded()
             }
+
         }
 
         MouseArea {
             id: clickArea
             anchors.fill: parent
             hoverEnabled: true
-            enabled: expanded
+            enabled: expanded && !settingsOpen // Disable clicking when settings are open
             onClicked: function(mouse) {
                 mouse.accepted = false
             }
@@ -283,324 +380,119 @@ ApplicationWindow {
             text: "⚙️"
             font.pixelSize: 12
             anchors.centerIn: parent
-            visible: !expanded
+            visible: !expanded && !settingsOpen // Hide gear icon when settings are open
             color: "white"
+        }
+
+        // Show a different indicator when settings are open
+        Text {
+            text: "📂"
+            font.pixelSize: 12
+            anchors.centerIn: parent
+            visible: !expanded && settingsOpen
+            color: "white"
+        }
+
+        Menue {
+            id: menu
+            anchors.fill: parent
+            visible: expanded && !settingsOpen // Hide menu when settings are open
+            onSettingsBtn: {
+                console.log("Settings clicked")
+                settings_popup.visible = true
+                settings_popup.z = 10
+            }
+            // onCloseBtn: {
+            //     console.log("Close clicked")
+            //     close_confirmation.visible = true
+            //     close_confirmation.z = 10
+            // }
+        }
+    }
+
+    // Modified Settings Popup
+    Rectangle {
+        id: settings_popup
+        width: 250
+        height: 300
+        z: -1
+        visible: false
+        color: "#ffffff"
+        // radius: 10
+        border {
+            width: 1
+            color: "#cccccc"
+        }
+
+        // Main content of the popup
+        ColumnLayout {
+            anchors.fill: parent
+            anchors.margins: 10
+
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                text: "Settings Panel"
+                font.pixelSize: 20
+                Layout.topMargin: 20
+            }
+
+            Item {
+                Layout.fillHeight: true
+            }
+
+            // Close button
+            Button {
+                Layout.alignment: Qt.AlignRight
+                text: "Close"
+                onClicked: {
+                    settings_popup.visible = false
+                    settings_popup.z = -1
+                }
+            }
+        }
+    }
+
+    // Close confirmation dialog
+    Rectangle {
+        id: close_confirmation
+        width: undocked_width
+        height: undocked_height
+        z: -1
+        visible: false
+        color: "#ffffff"
+        // radius: 10
+        border {
+            width: 1
+            color: "#cccccc"
         }
 
         ColumnLayout {
             anchors.fill: parent
             anchors.margins: 10
-            spacing: 6
-            visible: expanded
 
-            Label {
-                text: "QUICK ACTIONS"
-                font.bold: true
-                font.pixelSize: 11
-                color: "#ECF0F1"
+            Text {
                 Layout.alignment: Qt.AlignHCenter
-                Layout.bottomMargin: 8
+                text: "Close Application?"
+                font.pixelSize: 16
+                Layout.topMargin: 20
             }
 
-            // Screen position buttons
             RowLayout {
-                Layout.fillWidth: true
-                Layout.preferredHeight: 26
-                spacing: 4
+                Layout.alignment: Qt.AlignHCenter
 
-                // Left position button
-                Rectangle {
-                    id: leftButton
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 26
-                    radius: 3
-                    color: leftMouseArea.pressed ? "#34495E" :
-                           leftMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                    border.width: 2
-                    border.color: screenEdge === "left" ? "#3498DB" : "#2C3E50"
-
-                    Text {
-                        text: "←"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        anchors.centerIn: parent
-                    }
-
-                    MouseArea {
-                        id: leftMouseArea
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: positionToEdge("left")
+                Button {
+                    text: "Yes"
+                    onClicked: {
+                        Qt.quit()
                     }
                 }
 
-                // Top position button
-                Rectangle {
-                    id: topButton
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 26
-                    radius: 3
-                    color: topMouseArea.pressed ? "#34495E" :
-                           topMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                    border.width: 2
-                    border.color: screenEdge === "top" ? "#3498DB" : "#2C3E50"
-
-                    Text {
-                        text: "↑"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        anchors.centerIn: parent
+                Button {
+                    text: "No"
+                    onClicked: {
+                        close_confirmation.visible = false
+                        close_confirmation.z = -1
                     }
-
-                    MouseArea {
-                        id: topMouseArea
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: positionToEdge("top")
-                    }
-                }
-
-                // Bottom position button
-                Rectangle {
-                    id: bottomButton
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 26
-                    radius: 3
-                    color: bottomMouseArea.pressed ? "#34495E" :
-                           bottomMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                    border.width: 2
-                    border.color: screenEdge === "bottom" ? "#3498DB" : "#2C3E50"
-
-                    Text {
-                        text: "↓"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        anchors.centerIn: parent
-                    }
-
-                    MouseArea {
-                        id: bottomMouseArea
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: positionToEdge("bottom")
-                    }
-                }
-
-                // Right position button
-                Rectangle {
-                    id: rightButton
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 26
-                    radius: 3
-                    color: rightMouseArea.pressed ? "#34495E" :
-                           rightMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                    border.width: 2
-                    border.color: screenEdge === "right" ? "#3498DB" : "#2C3E50"
-
-                    Text {
-                        text: "→"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        anchors.centerIn: parent
-                    }
-
-                    MouseArea {
-                        id: rightMouseArea
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: positionToEdge("right")
-                    }
-                }
-            }
-
-            // Follow mode button with dynamic text
-            Rectangle {
-                id: followButton
-                Layout.fillWidth: true
-                Layout.preferredHeight: 26
-                radius: 3
-                color: followMouseArea.pressed ? (followMouse ? "#27AE60" : "#7F8C8D") :
-                       followMouseArea.containsMouse ? (followMouse ? "#229954" : "#95A5A6") :
-                       (followMouse ? "#27AE60" : "#7F8C8D")
-                border.width: 1
-                border.color: followMouse ? "#229954" : "#95A5A6"
-
-                Text {
-                    text: {
-                        if (!followMouse) return "Enable Follow"
-                        if (screenEdge === "top" || screenEdge === "bottom") return "Following Mouse X"
-                        return "Following Mouse Y"
-                    }
-                    color: "#ECF0F1"
-                    font.pixelSize: 11
-                    font.bold: true
-                    anchors.centerIn: parent
-                }
-
-                MouseArea {
-                    id: followMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onClicked: followMouse = !followMouse
-                }
-            }
-
-            // Action buttons with sharper design
-            Rectangle {
-                id: calcButton
-                Layout.fillWidth: true
-                Layout.preferredHeight: 28
-                radius: 3
-                color: calcMouseArea.pressed ? "#34495E" :
-                       calcMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                border.width: 1
-                border.color: "#2C3E50"
-
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.margins: 5
-                    spacing: 8
-
-                    Text {
-                        text: "🧮"
-                        font.pixelSize: 12
-                        color: "#ECF0F1"
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-
-                    Text {
-                        text: "Calculator"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        elide: Text.ElideRight
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-                }
-
-                MouseArea {
-                    id: calcMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onClicked: Qt.openUrlExternally("calc.exe")
-                }
-            }
-
-            Rectangle {
-                id: screenshotButton
-                Layout.fillWidth: true
-                Layout.preferredHeight: 28
-                radius: 3
-                color: screenshotMouseArea.pressed ? "#34495E" :
-                       screenshotMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                border.width: 1
-                border.color: "#2C3E50"
-
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.margins: 5
-                    spacing: 8
-
-                    Text {
-                        text: "📸"
-                        font.pixelSize: 12
-                        color: "#ECF0F1"
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-
-                    Text {
-                        text: "Screenshot"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        elide: Text.ElideRight
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-                }
-
-                MouseArea {
-                    id: screenshotMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onClicked: console.log("Screenshot functionality would go here")
-                }
-            }
-
-            Rectangle {
-                id: notepadButton
-                Layout.fillWidth: true
-                Layout.preferredHeight: 28
-                radius: 3
-                color: notepadMouseArea.pressed ? "#34495E" :
-                       notepadMouseArea.containsMouse ? "#2C3E50" : "#34495E"
-                border.width: 1
-                border.color: "#2C3E50"
-
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.margins: 5
-                    spacing: 8
-
-                    Text {
-                        text: "📝"
-                        font.pixelSize: 12
-                        color: "#ECF0F1"
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-
-                    Text {
-                        text: "Notepad"
-                        color: "#ECF0F1"
-                        font.pixelSize: 11
-                        font.bold: true
-                        elide: Text.ElideRight
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                    }
-                }
-
-                MouseArea {
-                    id: notepadMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onClicked: Qt.openUrlExternally("notepad.exe")
-                }
-            }
-
-            // Spacer to push bottom buttons down
-            Item {
-                Layout.fillHeight: true
-            }
-
-            Rectangle {
-                id: closeButton
-                Layout.fillWidth: true
-                Layout.preferredHeight: 26
-                radius: 3
-                color: closeMouseArea.pressed ? "#C0392B" :
-                       closeMouseArea.containsMouse ? "#A93226" : "#E74C3C"
-                border.width: 1
-                border.color: "#C0392B"
-
-                Text {
-                    text: "Close"
-                    color: "#ECF0F1"
-                    font.pixelSize: 11
-                    font.bold: true
-                    anchors.centerIn: parent
-                }
-
-                MouseArea {
-                    id: closeMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    onClicked: collapse()
                 }
             }
         }
@@ -614,6 +506,11 @@ ApplicationWindow {
         } else {
             root.y = savedY
             root.x = savedX
+
+            settings_popup.visible = false
+            settings_popup.z = -1
+            close_confirmation.visible = false
+            close_confirmation.z = -1
         }
     }
 

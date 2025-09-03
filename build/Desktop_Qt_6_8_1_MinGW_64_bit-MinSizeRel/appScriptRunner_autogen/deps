@@ -1064,4 +1064,6 @@ appScriptRunner_autogen/timestamp: \
 	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/main.cpp \
 	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/mousepositionprovider.cpp \
 	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/mousepositionprovider.h \
+	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/srunner.cpp \
+	C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/srunner.h \
 	C:/Program\ Files/CMake/bin/cmake.exe
