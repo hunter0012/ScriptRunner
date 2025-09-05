@@ -1,15 +1,4 @@
 C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/appScriptRunner.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/appScriptRunner_qmltyperegistration.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/all_qmltyperegistrations.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/appScriptRunner_qmllint.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/appScriptRunner_qmllint_json.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/appScriptRunner_qmllint_module.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/all_qmllint.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/all_qmllint_json.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/all_qmllint_module.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/appScriptRunner_tooling.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/module_appScriptRunner_aotstats_target.dir
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/all_aotstats.dir
 C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/appScriptRunner_qmlimportscan.dir
 C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/edit_cache.dir
 C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/CMakeFiles/rebuild_cache.dir

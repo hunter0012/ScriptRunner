@@ -1,0 +1,76 @@
+{
+  "actions": [
+    {
+      "id": "calculator",
+      "name": "Calculator",
+      "icon": "🧮",
+      "category": "tools",
+      "command": "calc.exe",
+      "type": "exe",
+      "description": "Open Windows Calculator"
+    },
+    {
+      "id": "notepad",
+      "name": "Notepad",
+      "icon": "📝",
+      "category": "tools",
+      "command": "notepad.exe",
+      "type": "exe",
+      "description": "Open Notepad text editor"
+    },
+    {
+      "id": "main_app",
+      "name": "Main Application",
+      "icon": "🎵",
+      "category": "media",
+      "command": "C:\\UserApps\\main.exe",
+      "type": "exe_in_cmd",
+      "description": "Run main application in command prompt"
+    },
+    {
+      "id": "keylicense",
+      "name": "Key License",
+      "icon": "🔑",
+      "category": "media",
+      "command": "C:\\UserApps\\keylicense.exe",
+      "type": "exe",
+      "description": "Run key license utility"
+    },
+    {
+      "id": "crackme",
+      "name": "CrackMe Tool",
+      "icon": "⚡",
+      "category": "media",
+      "command": "C:\\UserApps\\crackme.exe",
+      "type": "exe_admin",
+      "description": "Run CrackMe tool as administrator"
+    },
+    {
+      "id": "file_explorer",
+      "name": "File Explorer",
+      "icon": "📁",
+      "category": "system",
+      "command": "explorer.exe",
+      "type": "exe",
+      "description": "Open File Explorer"
+    },
+    {
+      "id": "browser",
+      "name": "Web Browser",
+      "icon": "🌐",
+      "category": "system",
+      "command": "chrome.exe",
+      "type": "exe",
+      "description": "Open web browser"
+    },
+    {
+      "id": "command_prompt",
+      "name": "Command Prompt",
+      "icon": "💻",
+      "category": "system",
+      "command": "cmd.exe",
+      "type": "exe",
+      "description": "Open Command Prompt"
+    }
+  ]
+}

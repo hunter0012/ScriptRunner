@@ -64,7 +64,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN21MousePositionProviderE[] = {
        1,    1,   26,    2, 0x06,    2 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   29,    2, 0x08,    4 /* Private */,
+       4,    0,   29,    2, 0x0a,    4 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QPoint,    3,
@@ -91,7 +91,7 @@ Q_CONSTINIT const QMetaObject MousePositionProvider::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<MousePositionProvider, std::true_type>,
         // method 'cursorPositionChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QPoint, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>,
         // method 'updateCursorPosition'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -111,7 +111,7 @@ void MousePositionProvider::qt_static_metacall(QObject *_o, QMetaObject::Call _c
     if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _q_method_type = void (MousePositionProvider::*)(QPoint );
+            using _q_method_type = void (MousePositionProvider::*)(const QPoint & );
             if (_q_method_type _q_method = &MousePositionProvider::cursorPositionChanged; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
@@ -165,7 +165,7 @@ int MousePositionProvider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void MousePositionProvider::cursorPositionChanged(QPoint _t1)
+void MousePositionProvider::cursorPositionChanged(const QPoint & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

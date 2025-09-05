@@ -2,52 +2,47 @@ cmake_minimum_required(VERSION 3.16)
 
 project(ScriptRunner VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
-find_package(Qt6 REQUIRED COMPONENTS Core)
-find_package(Qt6 REQUIRED COMPONENTS Core)
+# Find Qt6 modules
+find_package(Qt6 REQUIRED COMPONENTS Quick Core QuickControls2)
 
+# Standard Qt6 project setup (requires Qt 6.8+)
 qt_standard_project_setup(REQUIRES 6.8)
 
+# Add executable
 qt_add_executable(appScriptRunner
     main.cpp
+
+    mousepositionprovider.h
+    srunner.h
+    settingsmanager.h
+    actionmanager.h
+
+    mousepositionprovider.cpp
+    srunner.cpp
+    settingsmanager.cpp
+    actionmanager.cpp
 )
 
-qt_add_qml_module(appScriptRunner
-    URI ScriptRunner
-    VERSION 1.0
-    QML_FILES
-        Main.qml
-    SOURCES
-        mousepositionprovider.h
-        mousepositionprovider.cpp
-        QML_FILES Menue.qml
-        QML_FILES Settings.qml
-        SOURCES srunner.h srunner.cpp
-)
-
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
+# Set properties for macOS bundle / Windows executable
 set_target_properties(appScriptRunner PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appScriptRunner
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
+# Link Qt libraries
 target_link_libraries(appScriptRunner
-    PRIVATE Qt6::Quick
+    PRIVATE Qt6::Quick Qt6::Core Qt6::QuickControls2
 )
-target_link_libraries(appScriptRunner PRIVATE Qt6::Core)
-target_link_libraries(appScriptRunner PRIVATE Qt6::Core)
 
+# Install rules
 include(GNUInstallDirs)
 install(TARGETS appScriptRunner
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
-

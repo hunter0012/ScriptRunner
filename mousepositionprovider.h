@@ -3,8 +3,6 @@
 
 #include <QObject>
 #include <QPoint>
-#include <QTimer>
-#include <Windows.h>
 
 class MousePositionProvider : public QObject
 {
@@ -12,36 +10,17 @@ class MousePositionProvider : public QObject
     Q_PROPERTY(QPoint cursorPosition READ cursorPosition NOTIFY cursorPositionChanged)
 
 public:
-    explicit MousePositionProvider(QObject *parent = nullptr) : QObject(parent)
-    {
-        // Set up timer to poll mouse position
-        m_timer = new QTimer(this);
-        connect(m_timer, &QTimer::timeout, this, &MousePositionProvider::updateCursorPosition);
-        m_timer->start(16); // ~60 FPS
-    }
+    explicit MousePositionProvider(QObject *parent = nullptr);
 
-    QPoint cursorPosition() const { return m_cursorPosition; }
+    QPoint cursorPosition() const;
 
 signals:
-    void cursorPositionChanged(QPoint cursorPosition);
+    void cursorPositionChanged(const QPoint &cursorPosition);
 
-private slots:
-    void updateCursorPosition()
-    {
-        POINT point;
-        if (GetCursorPos(&point))
-        {
-            QPoint newPosition(point.x, point.y);
-            if (newPosition != m_cursorPosition)
-            {
-                m_cursorPosition = newPosition;
-                emit cursorPositionChanged(m_cursorPosition);
-            }
-        }
-    }
+public slots:
+    void updateCursorPosition();
 
 private:
-    QTimer *m_timer;
     QPoint m_cursorPosition;
 };
 

@@ -1,120 +1,131 @@
-#include "srunner.h"
+#include "SRunner.h"
+#include <QDebug>
+#include <QDir>
 
-#include <QProcess>
-#include <Windows.h>
-#include <processthreadsapi.h>
-#include <qdebug.h>
+#ifdef Q_OS_WIN
+#include <windows.h>
+#include <shellapi.h>
+#endif
 
 SRunner::SRunner(QObject *parent)
-    : QObject{parent}
-{}
-
-void SRunner::runExeInCmd(const QString &exePath)
+    : QObject(parent)
+    , m_process(new QProcess(this))
 {
-    qDebug() << "Executing:" << exePath;
-
-    // Build the command: run EXE, print Complete, wait for key, then close CMD
-    QString cmdLine = QString("/C \"%1 && echo Complete && pause\"").arg(exePath);
-
-    // Convert to wide string
-    std::wstring wcmdLine = cmdLine.toStdWString();
-
-    STARTUPINFOW si = { sizeof(si) };
-    PROCESS_INFORMATION pi = {};
-
-    BOOL success = CreateProcessW(
-        L"C:\\Windows\\System32\\cmd.exe", // Application = cmd.exe
-        wcmdLine.data(),                   // Command line arguments
-        nullptr,
-        nullptr,
-        FALSE,
-        CREATE_NEW_CONSOLE,                // New console window
-        nullptr,
-        nullptr,
-        &si,
-        &pi
-        );
-
-    if (!success) {
-        qDebug() << "Failed to launch CMD:" << GetLastError();
-        return;
-    }
-
-    qDebug() << "CMD window launched";
-
-    // Close handles (CMD process keeps running)
-    CloseHandle(pi.hThread);
-    CloseHandle(pi.hProcess);
-}
-
-
-// void SRunner::runExe(const QString &exePath)
-// {
-//     qDebug() << "Executing:" << exePath;
-
-//     // Build a command line: run your EXE, then echo Complete, then pause
-//     QString command = QString("%1 && echo Complete && pause").arg(exePath);
-
-//     // Start cmd.exe with /K to keep window open
-//     QProcess::startDetached("cmd.exe", QStringList() << "/K" << command);
-
-//     qDebug() << "CMD window launched";
-//     emit finished();
-// }
-void SRunner::runExe(const QString &exePath)
-{
-    // Create a QProcess instance on the heap so it lives after this function
-    QProcess *process = new QProcess(this);
-
-    // Merge stdout and stderr so we can read all output
-    process->setProcessChannelMode(QProcess::MergedChannels);
-
-    // Connect signals to handle output and completion
-    connect(process, &QProcess::readyReadStandardOutput, [process]() {
-        QByteArray output = process->readAllStandardOutput();
-        qDebug() << "Output:" << output;
-    });
-
-    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-            [this, process](int exitCode, QProcess::ExitStatus exitStatus) {
-                Q_UNUSED(exitStatus);
-                qDebug() << "Process finished with code:" << exitCode;
-                emit finished();          // Notify QML or other parts of app
-                process->deleteLater();   // Clean up
+    connect(m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            [this](int exitCode, QProcess::ExitStatus exitStatus) {
+                QString command = m_process->program() + " " + m_process->arguments().join(" ");
+                emit executionFinished(command, exitCode);
             });
 
-    // Start the process asynchronously
-    process->start(exePath);
+    connect(m_process, &QProcess::errorOccurred,
+            [this](QProcess::ProcessError error) {
+                QString command = m_process->program() + " " + m_process->arguments().join(" ");
+                emit executionError(command, m_process->errorString());
+            });
+}
 
-    if (!process->waitForStarted(1000)) { // just wait 1s to see if it started
-        qDebug() << "Failed to start:" << exePath;
-        process->deleteLater();
+void SRunner::runExe(const QString &path)
+{
+    QString cleanedPath = path.trimmed();
+    if (cleanedPath.isEmpty()) {
+        emit executionError(path, "Empty path provided");
         return;
     }
 
-    qDebug() << "Process started asynchronously";
+    emit executionStarted(cleanedPath);
+
+    if (!QFile::exists(cleanedPath)) {
+        emit executionError(cleanedPath, "File does not exist");
+        return;
+    }
+
+    m_process->start(cleanedPath, QStringList());
 }
 
-
-void SRunner::runExeAsAdmin(const QString &exePath)
+void SRunner::runExeInCmd(const QString &path)
 {
-    qDebug() << "Executing as admin:" << exePath;
+    QString cleanedPath = path.trimmed();
+    if (cleanedPath.isEmpty()) {
+        emit executionError(path, "Empty path provided");
+        return;
+    }
 
-    std::wstring wexePath = exePath.toStdWString();
+    emit executionStarted(cleanedPath);
 
+    if (!QFile::exists(cleanedPath)) {
+        emit executionError(cleanedPath, "File does not exist");
+        return;
+    }
+
+#ifdef Q_OS_WIN
+    QString command = "cmd.exe";
+    QStringList arguments;
+    arguments << "/c" << "start" << "\"\"";
+
+    // Extract directory and filename
+    QFileInfo fileInfo(cleanedPath);
+    QString directory = fileInfo.absolutePath();
+    QString filename = fileInfo.fileName();
+
+    arguments << filename;
+
+    m_process->setWorkingDirectory(directory);
+    m_process->start(command, arguments);
+#else
+    // For non-Windows systems, use xterm or similar
+    m_process->start("xterm", QStringList() << "-e" << cleanedPath);
+#endif
+}
+
+void SRunner::runExeAsAdmin(const QString &path)
+{
+    QString cleanedPath = path.trimmed();
+    if (cleanedPath.isEmpty()) {
+        emit executionError(path, "Empty path provided");
+        return;
+    }
+
+    emit executionStarted(cleanedPath);
+
+    if (!QFile::exists(cleanedPath)) {
+        emit executionError(cleanedPath, "File does not exist");
+        return;
+    }
+
+#ifdef Q_OS_WIN
+    // Use ShellExecute to run as admin on Windows
     HINSTANCE result = ShellExecuteW(
-        nullptr,       // Parent window
-        L"runas",      // Verb: run as admin
-        wexePath.c_str(), // File to run
-        nullptr,       // Parameters
-        nullptr,       // Working directory
-        SW_SHOWNORMAL  // Show window normally
+        NULL,
+        L"runas",
+        reinterpret_cast<const WCHAR*>(cleanedPath.utf16()),
+        NULL,
+        NULL,
+        SW_SHOWNORMAL
         );
 
-    // Use reinterpret_cast<quintptr> to safely compare HINSTANCE on 64-bit
-    if (reinterpret_cast<quintptr>(result) <= 32) {
-        qDebug() << "Failed to launch as admin. Error code:" << reinterpret_cast<quintptr>(result);
-    } else {
-        qDebug() << "Process started as administrator";
+    // Fix: Use proper pointer comparison instead of casting to int
+    if (reinterpret_cast<intptr_t>(result) <= 32) {
+        emit executionError(cleanedPath, "Failed to execute as administrator");
     }
+#else
+    // For Linux/macOS, use pkexec or sudo (this is simplified)
+    m_process->start("pkexec", QStringList() << cleanedPath);
+#endif
+}
+
+void SRunner::executeCommand(const QString &command)
+{
+    QString cleanedCommand = command.trimmed();
+    if (cleanedCommand.isEmpty()) {
+        emit executionError(command, "Empty command provided");
+        return;
+    }
+
+    emit executionStarted(cleanedCommand);
+
+#ifdef Q_OS_WIN
+    m_process->start("cmd.exe", QStringList() << "/c" << cleanedCommand);
+#else
+    m_process->start("sh", QStringList() << "-c" << cleanedCommand);
+#endif
 }
