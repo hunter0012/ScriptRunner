@@ -1,2 +1,0 @@
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/appScriptRunner_autogen/include/../EWIEGA46WW/moc_mousepositionprovider.cpp.json
-C:/Users/Hunter/Desktop/Workspace/github/ScriptRunner/build/Desktop_Qt_6_8_1_MinGW_64_bit-MinSizeRel/appScriptRunner_autogen/include/../EWIEGA46WW/moc_srunner.cpp.json
