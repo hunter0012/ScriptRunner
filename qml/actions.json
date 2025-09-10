@@ -1,0 +1,41 @@
+{
+  "actions": [
+    {
+      "id": "calculator",
+      "name": "Calculator",
+      "icon": "🧮",
+      "category": "tools",
+      "command": "calc.exe",
+      "type": "exe",
+      "description": "Open Windows Calculator"
+    },
+    {
+      "id": "cmd",
+      "name": "ipconfig",
+      "icon": "CMD",
+      "category": "tools",
+      "command": "ipconfig",
+      "type": "exe_in_cmd",
+      "description": "Open Exe In CMD."
+    },
+    {
+      "id": "notepad_with_file",
+      "name": "Notepad with File",
+      "icon": "📝",
+      "category": "tools",
+      "command": "notepad.exe",
+      "type": "exe_with_input",
+      "description": "Open file in Notepad",
+      "inputs": [
+        {
+          "type": "file",
+          "id": "file",
+          "name": "Select file",
+          "required": true,
+          "method": "file_drop",
+          "dialog_title": "Select text file"
+        }
+      ]
+    }
+  ]
+}
